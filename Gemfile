@@ -39,7 +39,7 @@ group :development, :test do
   gem 'rspec'
   gem 'guard-rspec'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'pry'
   gem 'dotenv'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
