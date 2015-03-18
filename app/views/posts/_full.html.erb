@@ -1,2 +1,4 @@
 <h2><%= link_to raw(@decoder.decode post.headline), post_path(post) %></h2>
 <%= raw post.text %>
+<h5 class="byline">Written by <%= post.author_name %></h5>
+<%= link_to "Original", post.url, target: "_blank" %>

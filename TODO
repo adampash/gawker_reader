@@ -1,4 +1,5 @@
-Add post's timestamp to post model
+Twitter embeds
+
 * check site_owner? on
   * submitting post (can only submit for a site the user owns)
   * removing a post (can only remove a post for a site the user owns)

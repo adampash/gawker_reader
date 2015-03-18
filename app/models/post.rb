@@ -3,7 +3,6 @@ require 'digest/md5'
 
 class Post < ActiveRecord::Base
   validates :kinja_id, uniqueness: true
-  paginates_per 50
 
   def self.fetch_and_create(url)
     kinja = Kinja::Client.new
@@ -38,6 +37,10 @@ class Post < ActiveRecord::Base
 
   def self.by_site(site)
     where(domain: "#{site}.com").order('publish_time DESC')
+  end
+
+  def author_name
+    data["byline"].empty? ? author : data["byline"]
   end
 
   def preview_image

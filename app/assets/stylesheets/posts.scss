@@ -1,3 +1,59 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+ font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  p {
+    font-family: Georgia;
+  }
+  .main {
+    max-width: 740px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+    h3.month {
+      clear: both;
+      padding: 20px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    .preview {
+      clear: both;
+      margin-bottom: 25px;
+      h2 {
+        margin-bottom: 0;
+      }
+      .first-text {
+        margin-top: 10px;
+      }
+      img {
+        max-width: 300px;
+        float:left;
+        margin-right: 20px;
+      }
+    }
+  }
+  h4 {
+    font-size: 24px;
+  }
+  a {
+    color: rgb(168, 36, 36);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  p {
+    font-size: 18px;
+    line-height: 25px;
+  }
+  .media-640 {
+    text-align: center;
+    img {
+      max-width: 100%;
+    }
+  }
+}
