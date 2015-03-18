@@ -1,0 +1,9 @@
+* check site_owner? on
+  * submitting post (can only submit for a site the user owns)
+  * removing a post (can only remove a post for a site the user owns)
+  * commenting on a post (the definitive comment)
+
+* check politburo on
+  * commenting on post (one of many)
+  * politburo view? (or site_owner? of that site)
+  * comment on a site's month in general
