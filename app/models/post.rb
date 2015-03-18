@@ -1,4 +1,4 @@
-require 'kinja'
+# require 'kinja'
 require 'digest/md5'
 
 class Post < ActiveRecord::Base

@@ -86,6 +86,7 @@ GEM
     hashie (3.4.0)
     hike (1.2.3)
     hitimes (1.2.2)
+    htmlentities (4.3.3)
     httparty (0.13.3)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
@@ -149,6 +150,7 @@ GEM
     puma (2.11.1)
       rack (>= 1.1, < 2.0)
     rack (1.6.0)
+    rack-cors (0.3.1)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.0)
@@ -253,6 +255,7 @@ DEPENDENCIES
   devise
   dotenv
   guard-rspec
+  htmlentities
   jbuilder (~> 2.0)
   jquery-rails
   kinja
@@ -260,6 +263,7 @@ DEPENDENCIES
   pg
   pry
   puma
+  rack-cors
   rails (= 4.2.0)
   rspec-rails
   sass-rails (~> 5.0)

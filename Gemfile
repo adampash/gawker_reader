@@ -39,6 +39,9 @@ gem "omniauth-google-oauth2"
 # kinja api
 gem 'kinja'
 
+gem 'htmlentities'
+gem 'rack-cors'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'guard-rspec'

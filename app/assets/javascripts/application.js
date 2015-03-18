@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= stub ./bookmarklet/post.bookmarklet.coffee
+//= require_directory .

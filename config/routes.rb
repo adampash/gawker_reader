@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'logout' => 'users#logout', as: :user_logout
   get 'dashboard' => 'pages#dashboard', as: :dashboard
   get ':site' => 'posts#index', as: :site
+  get 'posts/preview/:id' => 'posts#preview', as: :preview
   root 'pages#welcome'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
