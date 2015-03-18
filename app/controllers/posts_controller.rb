@@ -5,6 +5,8 @@ class PostsController < ApplicationController
 
   def index
     @site = params[:site]
+    @decoder = HTMLEntities.new
+    @grouped_posts = Post.group(Post.by_site(@site).page(params[:page] || 1))
   end
 
   def create

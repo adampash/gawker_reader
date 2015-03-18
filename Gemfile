@@ -41,6 +41,7 @@ gem 'kinja'
 
 gem 'htmlentities'
 gem 'rack-cors'
+gem 'kaminari'
 
 group :development, :test do
   gem 'rspec-rails'

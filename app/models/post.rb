@@ -3,12 +3,14 @@ require 'digest/md5'
 
 class Post < ActiveRecord::Base
   validates :kinja_id, uniqueness: true
+  paginates_per 50
 
   def self.fetch_and_create(url)
     kinja = Kinja::Client.new
     response = kinja.get_post(url)
     post = create_from_json response["data"] unless response["data"].nil?
-    Post.find_by(url: response["data"]["permalink"]) if post.id.nil?
+    post = Post.find_by(url: response["data"]["permalink"]) if post.id.nil?
+    post
   end
 
   def self.create_from_json(params)
@@ -28,6 +30,14 @@ class Post < ActiveRecord::Base
         domain: get_domain(params["permalink"])
       }
     )
+  end
+
+  def self.group(posts)
+    posts.group_by { |post| post.publish_time.strftime("%B %Y") }
+  end
+
+  def self.by_site(site)
+    where(domain: "#{site}.com").order('publish_time DESC')
   end
 
   def preview_image

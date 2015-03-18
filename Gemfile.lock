@@ -100,6 +100,9 @@ GEM
       thor (>= 0.14, < 2.0)
     json (1.8.2)
     jwt (1.4.1)
+    kaminari (0.16.3)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     kinja (0.0.7)
       httparty
     listen (2.9.0)
@@ -258,6 +261,7 @@ DEPENDENCIES
   htmlentities
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   kinja
   omniauth-google-oauth2
   pg

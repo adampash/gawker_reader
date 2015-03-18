@@ -1,3 +1,3 @@
-<%= image_tag @post.preview_image %>
-<h2><%= raw @decoder.decode @post.headline %></h2>
-<%= raw @post.excerpt %>
+<%= link_to image_tag(post.preview_image), post_path(post) %>
+<h2><%= link_to raw(@decoder.decode post.headline), post_path(post) %></h2>
+<%= raw post.excerpt %>
