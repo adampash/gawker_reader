@@ -1,0 +1,10 @@
+<h1>Gawker Reader</h1>
+
+<% if user_signed_in? %>
+  <%= current_user.name %>
+  <%= image_tag current_user.avatar %>
+  <%= link_to "Logout", user_logout_path %>
+<% else %>
+  <%= link_to "Login", user_omniauth_authorize_path(provider: :google_oauth2) %>
+<% end %>
+

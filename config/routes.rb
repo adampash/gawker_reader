@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   # devise_for :users
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
+  get 'logout' => 'users#logout', as: :user_logout
+  get 'dashboard' => 'pages#dashboard', as: :dashboard
+  get ':site' => 'posts#index', as: :site
+  root 'pages#welcome'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
