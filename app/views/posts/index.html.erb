@@ -1,3 +1,4 @@
+<%= site_header(@site) %>
 <% @grouped_posts.each do |group| %>
   <h3 class="month"><%= group[0] %> (<%= group.flatten.count - 1 %>)</h3>
   <% posts = group[1..-1].flatten %>

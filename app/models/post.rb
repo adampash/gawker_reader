@@ -51,6 +51,10 @@ class Post < ActiveRecord::Base
     data["excerpt"]
   end
 
+  def site_name
+    domain.gsub!('.com', '')
+  end
+
   private
   def self.milli_to_date(milliseconds)
     DateTime.strptime(milliseconds.to_s, '%Q')
