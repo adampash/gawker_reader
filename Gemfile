@@ -32,11 +32,15 @@ gem 'puma'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# authentication
 gem 'devise'
 gem "omniauth-google-oauth2"
 
+# kinja api
+gem 'kinja'
+
 group :development, :test do
-  gem 'rspec'
+  gem 'rspec-rails'
   gem 'guard-rspec'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
