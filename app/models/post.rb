@@ -2,10 +2,13 @@
 require 'digest/md5'
 
 class Post < ActiveRecord::Base
+  validates :kinja_id, uniqueness: true
+
   def self.fetch_and_create(url)
     kinja = Kinja::Client.new
     response = kinja.get_post(url)
-    create_from_json response["data"] unless response["data"].nil?
+    post = create_from_json response["data"] unless response["data"].nil?
+    Post.find_by(url: response["data"]["permalink"]) if post.id.nil?
   end
 
   def self.create_from_json(params)

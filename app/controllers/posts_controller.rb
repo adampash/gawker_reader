@@ -2,6 +2,7 @@ require 'htmlentities'
 
 class PostsController < ApplicationController
   protect_from_forgery :except => [:create]
+
   def index
     @site = params[:site]
   end

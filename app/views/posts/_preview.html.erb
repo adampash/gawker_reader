@@ -1,3 +1,3 @@
 <%= image_tag @post.preview_image %>
-<h2><%= @decoder.decode @post.headline %></h2>
+<h2><%= raw @decoder.decode @post.headline %></h2>
 <%= raw @post.excerpt %>
