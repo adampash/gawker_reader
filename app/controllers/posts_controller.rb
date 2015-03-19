@@ -17,6 +17,7 @@ class PostsController < ApplicationController
 
   def show
     @decoder = HTMLEntities.new
+    @comment = Comment.post_comment_for_user(params[:id], current_user.id)
     @post = Post.find(params[:id])
   end
 

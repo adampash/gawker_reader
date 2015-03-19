@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  get 'comments/create'
+
   # devise_for :users
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
   resources :posts
+  resources :comments
   get 'logout' => 'users#logout', as: :user_logout
   get 'dashboard' => 'pages#dashboard', as: :dashboard
   get ':site' => 'posts#index', as: :site

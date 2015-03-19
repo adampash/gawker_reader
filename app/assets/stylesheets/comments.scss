@@ -1,0 +1,28 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.floating_comments {
+  position: fixed;
+  right: 10px;
+  top: 80px;
+  width: 325px;
+  height: 350px;
+  textarea {
+    width: 280px;
+    height: 300px;
+    font-size: 16px;
+    font-family: Georgia;
+    padding: 10px;
+  }
+  button {
+    width: 302px;
+    font-size: 20px;
+    padding: 10px 0;
+    background: rgb(53, 127, 224);
+    color: white;
+    border: none;
+    &:hover {
+      background: #056CF2;
+    }
+  }
+}

@@ -3,3 +3,9 @@
 <%= raw post.text %>
 <h5 class="byline">Written by <%= post.author_name %></h5>
 <%= link_to "Original", post.url, target: "_blank" %>
+<%= render partial: 'comments/floating_comment' if current_user.politburo? %>
+
+<% post.comments.each do |comment| %>
+  <div class="user"><%= image_tag comment.user.avatar %><%= comment.user.name %>:</div>
+  <p><%= comment.text %></p>
+<% end %>

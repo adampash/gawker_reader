@@ -3,6 +3,7 @@ require 'digest/md5'
 
 class Post < ActiveRecord::Base
   validates :kinja_id, uniqueness: true
+  has_many :comments
 
   def self.fetch_and_create(url)
     kinja = Kinja::Client.new
@@ -44,7 +45,7 @@ class Post < ActiveRecord::Base
   end
 
   def preview_image
-    small_image["src"]
+    small_image.nil? ? "" : small_image["src"]
   end
 
   def excerpt

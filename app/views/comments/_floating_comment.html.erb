@@ -1,0 +1,4 @@
+<div class="floating_comments">
+  <textarea placeholder="Write your comments here"><%= @comment.text unless @comment.nil? %></textarea>
+  <button class="save" data-post-id="<%= @post.id %>">Save</button>
+</div>
