@@ -15,12 +15,13 @@ window.create_post = (url) ->
 
 ready = ->
   $('.remove_post').on 'click', ->
-    $.ajax
-      method: "DELETE"
-      url: "/posts/#{$(@).data('post-id')}"
-      success: (result) ->
-        debugger
-        # window.close()
+    if confirm("Are you sure you want to remove this post?")
+      $.ajax
+        method: "DELETE"
+        url: "/posts/#{$(@).data('post-id')}"
+        success: (result) ->
+          $("##{result.post_id}").fadeOut()
+          # window.close()
     false
 
 

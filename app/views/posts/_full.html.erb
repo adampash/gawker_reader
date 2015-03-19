@@ -1,11 +1,9 @@
 <%= site_header(post.site_name) %>
+<% if post.owner_comment %>
+  <p><%= post.owner_comment.user.first_name %>: <%= post.owner_comment.text %></p>
+<% end %>
 <h2><%= link_to raw(@decoder.decode post.headline), post_path(post) %></h2>
 <%= raw post.text %>
 <h5 class="byline">Written by <%= post.author_name %></h5>
 <%= link_to "Original", post.url, target: "_blank" %>
 <%= render partial: 'comments/floating_comment' if current_user.politburo? %>
-
-<% post.comments.each do |comment| %>
-  <div class="user"><%= image_tag comment.user.avatar %><%= comment.user.name %>:</div>
-  <p><%= comment.text %></p>
-<% end %>
