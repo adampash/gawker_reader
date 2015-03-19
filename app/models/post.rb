@@ -51,6 +51,10 @@ class Post < ActiveRecord::Base
     comments.where(comment_type: 'politburo')
   end
 
+  def pinned_comments
+    comments.where(pinned: true)
+  end
+
   def author_name
     data["byline"].empty? ? author : data["byline"]
   end

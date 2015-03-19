@@ -11,6 +11,10 @@ class ReportsController < ApplicationController
   end
 
   def index
+    @site = params[:site]
+    @month = params[:month]
+    @decoder = HTMLEntities.new
+    @grouped_posts = Post.group(Post.by_site(@site).page(params[:page] || 1).per(20))
   end
 
 end

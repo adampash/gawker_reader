@@ -3,7 +3,7 @@
     <%= image_tag comment.user.avatar %>
     <span class="name"><%= comment.user.name %></span>
   </div>
-  <% if defined? @pinnable %>
+  <% if @pinnable or current_user.politburo %>
     <div class="pin">
       Pinned: <a href="#" class="toggle" data-url="/comments/pin/<%= comment.id %>" data-key="pinned" data-val="<%= comment.pinned %>">
         <%= comment.pinned? ? "Yes" : "No" %>
