@@ -26,6 +26,7 @@ class PostsController < ApplicationController
     @decoder = HTMLEntities.new
     @comment = Comment.post_comment_for_user(params[:id], current_user.id)
     @post = Post.find(params[:id])
+    @site = @post.domain.gsub(".com", "")
   end
 
   def preview

@@ -7,8 +7,9 @@ Rails.application.routes.draw do
 
   get 'comments/create'
 
-  get 'reports/politburo/:site' => 'reports#politburo'
-  get 'reports/:site' => 'reports#index'
+  get 'reports/politburo/:site' => 'reports#politburo', as: :build_report
+  get 'reports' => 'reports#index'
+  get 'reports/:site' => 'reports#index', as: :report
   get 'reports/:site/:month' => 'reports#index'
 
   # devise_for :users

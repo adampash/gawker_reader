@@ -1,5 +1,6 @@
-<%= render partial: 'posts/nav' %>
-<%= site_header(@site) %>
+<% if current_user.politburo? %>
+  Hey Politburo member! Click <%= link_to "here to build the report", build_report_path(@site) %>
+<% end %>
 <% @grouped_posts.each do |group| %>
   <h3 class="month"><%= group[0] %> (<%= group.flatten.count - 1 %>)</h3>
   <% posts = group[1..-1].flatten %>
