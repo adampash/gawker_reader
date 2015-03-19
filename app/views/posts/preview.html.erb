@@ -1,1 +1,15 @@
-<%= render partial: 'preview', locals: { post: @post } %>
+<div class="preview_container">
+  <%= render partial: 'preview', locals: { post: @post, text_preview: false } %>
+  <div class="notes">
+    <h5>Notes</h5>
+    <textarea></textarea>
+    <div class="buttons">
+      <button class="cancel">Cancel</button>
+      <button class="save" data-post-id="<%=@post.id%>">Save</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $('.notes textarea').focus()
+</script>

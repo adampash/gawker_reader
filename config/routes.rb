@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # devise_for :users
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
+  get 'posts/submit' => 'posts#submit'
   resources :posts
   resources :comments
   get 'logout' => 'users#logout', as: :user_logout

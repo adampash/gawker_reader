@@ -14,15 +14,16 @@
     font-family: Georgia;
     padding: 10px;
   }
-  button {
-    width: 302px;
-    font-size: 20px;
-    padding: 10px 0;
-    background: rgb(53, 127, 224);
-    color: white;
-    border: none;
-    &:hover {
-      background: #056CF2;
-    }
+}
+button {
+  cursor: pointer;
+  width: 302px;
+  font-size: 20px;
+  padding: 10px 0;
+  background: rgb(53, 127, 224);
+  color: white;
+  border: none;
+  &:hover {
+    background: #056CF2;
   }
 }

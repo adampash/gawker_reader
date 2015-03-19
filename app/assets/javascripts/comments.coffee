@@ -15,5 +15,24 @@ ready = ->
         debugger
 
 
+  $('.notes button.cancel').on 'click', ->
+    $.ajax
+      method: "DELETE"
+      url: "/posts/#{$('.save').data('post-id')}"
+      success: (result) ->
+        window.close()
+
+  $('.notes button.save').on 'click', ->
+    comment = $('.notes textarea').val()
+    $.ajax
+      method: "POST"
+      url: "/comments"
+      data:
+        text: comment
+        post_id: $(@).data('post-id')
+      success: (result) ->
+        window.close()
+
+
 $(document).ready(ready)
 $(document).on('page:load', ready)

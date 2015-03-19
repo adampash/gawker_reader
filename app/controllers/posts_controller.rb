@@ -1,6 +1,7 @@
 require 'htmlentities'
 
 class PostsController < ApplicationController
+  before_action :authenticate_user!
   protect_from_forgery :except => [:create]
 
   def index
@@ -11,8 +12,12 @@ class PostsController < ApplicationController
 
   def create
     # @decoder = HTMLEntities.new
-    @post = Post.fetch_and_create params[:url]
+    @post = Post.fetch_and_create params[:url], current_user
     render json: { id: @post.id }
+  end
+
+  def submit
+
   end
 
   def show
@@ -24,5 +29,10 @@ class PostsController < ApplicationController
   def preview
     @decoder = HTMLEntities.new
     @post = Post.find(params[:id])
+  end
+
+  def destroy
+    Post.find(params[:id]).destroy
+    render json: { success: true }
   end
 end

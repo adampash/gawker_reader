@@ -1,5 +1,9 @@
 <div class="preview">
   <%= link_to image_tag(post.preview_image), post_path(post) %>
   <h2><%= link_to raw(@decoder.decode post.headline), post_path(post) %></h2>
-  <%= raw post.excerpt %>
+  <% if post.owner_comment %>
+    <p><%= post.owner_comment.user.first_name %>: <%= post.owner_comment.text %></p>
+  <% else %>
+    <%= raw post.excerpt unless defined? text_preview %>
+  <% end %>
 </div>
