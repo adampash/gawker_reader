@@ -105,4 +105,16 @@ body {
       margin-bottom: 10px;
     }
   }
+  .flash {
+    background: rgb(153, 216, 143);
+    color: white;
+  }
+  .post {
+    position: relative;
+  }
+  .remove_post {
+    float: right;
+    // margin-bottom: 20px;
+    // margin-top: 0;
+  }
 }

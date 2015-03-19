@@ -2,10 +2,12 @@ require 'htmlentities'
 
 class PostsController < ApplicationController
   before_action :authenticate_user!
+  before_action :site_owner, :only => [:submit]
   protect_from_forgery :except => [:create]
 
   def index
     @site = params[:site]
+    @owns = current_user.owns_this_site(@site)
     @decoder = HTMLEntities.new
     @grouped_posts = Post.group(Post.by_site(@site).page(params[:page] || 1).per(20))
   end
@@ -34,5 +36,11 @@ class PostsController < ApplicationController
   def destroy
     Post.find(params[:id]).destroy
     render json: { success: true }
+  end
+
+  protected
+  def site_owner
+    flash[:notice] = "Only site leads can submit new stories. If you're a site lead and you're getting this message, ping Adam on Slack."
+    redirect_to root_path unless current_user.site_owner
   end
 end

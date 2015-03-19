@@ -1,0 +1,22 @@
+<%= render partial: 'posts/nav' %>
+<h1>User admin</h1>
+<% @users.each do |user| %>
+  <div class="user">
+    <div class="name"><%= user.name %></div>
+    <div class="pb">
+      Politburo: <a href="#" class="toggle" data-user-id="<%= user.id %>" data-key="politburo" data-val="<%= user.politburo %>">
+        <%= user.politburo? ? "Yes" : "No" %>
+      </a>
+    </div>
+    <div class="pb">
+      Admin: <a href="#" class="toggle" data-user-id="<%= user.id %>" data-key="admin" data-val="<%= user.admin %>">
+        <%= user.admin? ? "Yes" : "No" %>
+      </a>
+    </div>
+    <div class="pb">
+      Site owner: <a href="#" class="toggle" data-user-id="<%= user.id %>" data-key="site_owner" data-val="<%= user.site_owner %>">
+        <%= user.site_owner? ? "Yes" : "No" %>
+      </a>
+    </div>
+  </div>
+<% end %>

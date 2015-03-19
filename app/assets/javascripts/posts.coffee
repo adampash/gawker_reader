@@ -13,3 +13,17 @@ window.create_post = (url) ->
       link = "/posts/preview/#{result.id}"
       window.open link, '_self'
 
+ready = ->
+  $('.remove_post').on 'click', ->
+    $.ajax
+      method: "DELETE"
+      url: "/posts/#{$(@).data('post-id')}"
+      success: (result) ->
+        debugger
+        # window.close()
+    false
+
+
+
+$(document).ready(ready)
+$(document).on('page:load', ready)

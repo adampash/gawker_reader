@@ -1,4 +1,7 @@
 <div class="preview">
+  <% if @owns %>
+    <a href="#" alt="remove" class="remove_post" data-post-id="<%= post.id %>">X</a>
+  <% end %>
   <%= link_to image_tag(post.preview_image), post_path(post) %>
   <h2><%= link_to raw(@decoder.decode post.headline), post_path(post) %></h2>
   <% if post.owner_comment %>

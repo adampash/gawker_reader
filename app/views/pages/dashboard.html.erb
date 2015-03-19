@@ -1,3 +1,7 @@
+<% flash.each do |key, value| %>
+  <%= content_tag :div, value, class: "flash #{key}" %>
+<% end %>
+
 <% @sites.each do |site| %>
   <%= link_to site, site %>
 <% end %>
