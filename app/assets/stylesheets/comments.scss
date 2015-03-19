@@ -1,6 +1,35 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.comments {
+  padding: 0px 20px 50px;
+}
+.comment {
+  border-top: 1px solid #ddd;
+  padding: 5px 0;
+  font-family: Georgia;
+  img {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    float: left;
+    margin-right: 10px;
+  }
+  .user {
+    display: inline-block;
+  }
+  .name {
+    font-weight: bold;
+    margin-top: 5px;
+    display: inline-block;
+  }
+  .text {
+    margin-top: 5px;
+  }
+  .pin {
+    float: right;
+  }
+}
 .floating_comments {
   position: fixed;
   right: 10px;

@@ -6,11 +6,11 @@
 ready = ->
   $('a.toggle').on 'click', ->
     $el = $(@)
-    user_id = $el.data('user-id')
     key = $el.data('key')
     val = $el.data('val')
+    url = $el.data('url')
     $.ajax
-      url: "/admin/toggle/#{user_id}"
+      url: url
       method: "POST"
       data:
         key: key

@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
+  get 'reports/politburo'
+
+  get 'reports/index'
+
   get 'admin/index'
 
   get 'comments/create'
+
+  get 'reports/politburo/:site' => 'reports#politburo'
+  get 'reports/:site' => 'reports#index'
+  get 'reports/:site/:month' => 'reports#index'
 
   # devise_for :users
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
@@ -11,6 +19,7 @@ Rails.application.routes.draw do
   get 'posts/submit' => 'posts#submit'
   resources :posts
   resources :comments
+  post 'comments/pin/:id' => 'comments#pin'
   get 'logout' => 'users#logout', as: :user_logout
   get 'dashboard' => 'pages#dashboard', as: :dashboard
   get ':site' => 'posts#index', as: :site

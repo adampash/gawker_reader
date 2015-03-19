@@ -4,8 +4,8 @@ class Comment < ActiveRecord::Base
   def self.find_or_create_from_params(text, user, post)
     comment = post_comment_for_user(post.id, user.id)
     if comment.nil?
-      comment_type = "normal"
-      comment_type = "owner" if user.id == post.user.id #and !user.politburo
+      comment_type = "politburo" if user.politburo
+      comment_type = "owner" if user.id == post.user.id and !user.politburo
       comment = create(
         text: text,
         user_id: user.id,

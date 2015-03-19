@@ -47,6 +47,10 @@ class Post < ActiveRecord::Base
     owner_comment.empty? ? nil : owner_comment.first
   end
 
+  def politburo_comments
+    comments.where(comment_type: 'politburo')
+  end
+
   def author_name
     data["byline"].empty? ? author : data["byline"]
   end

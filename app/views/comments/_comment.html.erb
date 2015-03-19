@@ -1,0 +1,16 @@
+<div class="comment">
+  <div class="user">
+    <%= image_tag comment.user.avatar %>
+    <span class="name"><%= comment.user.name %></span>
+  </div>
+  <% if defined? @pinnable %>
+    <div class="pin">
+      Pinned: <a href="#" class="toggle" data-url="/comments/pin/<%= comment.id %>" data-key="pinned" data-val="<%= comment.pinned %>">
+        <%= comment.pinned? ? "Yes" : "No" %>
+      </a>
+    </div>
+  <% end %>
+  <div class="text">
+    <%= raw comment.text %>
+  </div>
+</div>
