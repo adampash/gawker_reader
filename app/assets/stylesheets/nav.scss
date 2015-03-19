@@ -1,0 +1,22 @@
+nav {
+  border-bottom: 1px solid #ddd;
+  height: 70px;
+  padding-left: 40px;
+  .menu {
+    cursor: pointer;
+    margin-right: 20px;
+  }
+  .dropdown {
+    display: none;
+    position: absolute;
+    background: white;
+    width: 200px;
+    top: 40px;
+    border: 1px solid #ddd;
+    li {
+      list-style: none;
+      margin: 0;
+      padding: 10px;
+    }
+  }
+}

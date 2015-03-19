@@ -1,0 +1,16 @@
+body {
+  .main {
+    .sites {
+      text-align: center;
+      .big_site {
+        display: inline-block;
+        width: 200px;
+        font-size: 30px;
+        padding: 40px;
+        text-transform: capitalize;
+        text-align: center;
+        border: 1px solid #ddd;
+      }
+    }
+  }
+}

@@ -42,6 +42,7 @@ gem 'kinja'
 gem 'htmlentities'
 gem 'rack-cors'
 gem 'kaminari'
+gem "font-awesome-rails"
 
 group :development, :test do
   gem 'rspec-rails'
