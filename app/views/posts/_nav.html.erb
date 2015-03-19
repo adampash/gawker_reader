@@ -1,9 +1,11 @@
 <nav>
   <i class="fa fa-bars fa-lg menu"></i>
   <ul class="dropdown">
-    <%= link_to raw("<li>Dashboard</li>"), dashboard_path %>
-    <% if current_user.politburo? %>
-      <%= render_sites %>
+    <% if user_signed_in? %>
+      <%= link_to raw("<li>Dashboard</li>"), dashboard_path %>
+      <% if current_user.politburo? %>
+        <%= render_sites %>
+      <% end %>
     <% end %>
   </ul>
   <%= site_header(@site) %>
