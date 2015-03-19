@@ -6,6 +6,8 @@
       <% if current_user.politburo? %>
         <%= render_sites %>
       <% end %>
+      <%= link_to(raw("<li>Admin</li>"), "/admin") if current_user.admin? %>
+      <%= link_to raw("<li>Logout</li>"), "/logout" %>
     <% end %>
   </ul>
   <%= site_header(@site) %>
