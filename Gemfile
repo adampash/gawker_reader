@@ -43,6 +43,7 @@ gem 'htmlentities'
 gem 'rack-cors'
 gem 'kaminari'
 gem "font-awesome-rails"
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'rspec-rails'
