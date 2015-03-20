@@ -4,7 +4,7 @@
   <% end %>
   <%= link_to image_tag(post.preview_image), post_path(post) %>
   <h2><%= link_to raw(@decoder.decode post.headline), post_path(post) %></h2>
-  <% if current_user.owns_this_site(post.domain) and post.owner_comment %>
+  <% if current_user.owns_this_site(post.domain) and post.owner_comment and !defined? not_editable %>
     <div class="comment">
       <div class="user">
         <div class="name"><%= post.owner_comment.user.name %>:</div>
@@ -14,6 +14,6 @@
     <button class="save" data-post-id="<%= post.id %>">Save</button>
     <div class="message"></div>
   <% elsif post.owner_comment %>
-    <p><%= post.owner_comment.user.first_name %>: <%= post.owner_comment.text %></p>
+    <p><%= post.owner_comment.user.name %>: <%= post.owner_comment.text %></p>
   <% end %>
 </div>

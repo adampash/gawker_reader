@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   post 'comments/pin/:id' => 'comments#pin'
   get 'logout' => 'users#logout', as: :user_logout
   get 'dashboard' => 'pages#dashboard', as: :dashboard
+  get 'setup' => 'pages#setup', as: :setup
   get ':site' => 'posts#index', as: :site
   get 'posts/preview/:id' => 'posts#preview', as: :preview
   root 'pages#welcome'

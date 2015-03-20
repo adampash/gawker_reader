@@ -1,8 +1,8 @@
 <h3>Overall:</h3>
-<p><%= @report.summary %></p>
+<p><%= simple_format @report.summary %></p>
 <h3 class="month"><%= @report.name %> (<%= @posts.count %>)</h3>
 <% @posts.each do |post| %>
-  <%= render partial: 'posts/preview', locals: { post: post } %>
+  <%= render partial: 'posts/preview', locals: { post: post, not_editable: true } %>
   <div class="comments">
     <% post.pinned_comments.each do |comment| %>
       <%= render comment %>

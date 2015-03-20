@@ -1,10 +1,8 @@
 Let user click "Next" to get next story in series
-Double check all permissions in controllers
 Get rid of all the @decoder instantiations
 Confirm navigate away if comment field has changed and not been saved
 Twitter embeds
 Require user to own site to submit story (right now any site owner can submit for any site)
-Fix posts containing #s like http://theconcourse.deadspin.com/a-21st-century-rip-van-winkle-what-changed-in-my-decad-1691783386/+laceydonohue
 * check site_owner? on
   * submitting post (can only submit for a site the user owns)
   * removing a post (can only remove a post for a site the user owns)
