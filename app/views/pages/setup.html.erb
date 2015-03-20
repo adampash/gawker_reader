@@ -1,8 +1,56 @@
-<h2>Editors</h2>
-<p>In order to submit stories, you'll need to install the bookmarklet below:</p>
+<div class="setup">
+  <% if current_user.politburo? %>
+    <h2>Politburo</h2>
+    <p>
+      As editors submit stories throughout the month, they'll show up here. You can read and comment on stories at any time, but initially those comments will only be visible to members of the Politburo.
+    </p>
 
-<p><a href="javascript:void((function() %7Bvar element%3Ddocument.createElement(%27script%27)%3B element.setAttribute(%27src%27, %27https://gawker-reader.herokuapp.com/bookmarklet.js%27)%3B document.body.appendChild(element)%7D)())">Submit to Reader</a></p>
+    <%= image_tag "comment.png" %>
 
-<p>Just drag and drop that link into your browser's toolbar.</p>
+    <p>
+      At the end of the month, we'll build our report, cherry-picking the comments we want to share with the editors for each story.
+    </p>
 
-<p>The first time you use it, you may need to allow popups from your site.</p>
+    <%= image_tag "create_report.png" %>
+
+    <p>
+      At this point, we can also write an overview of their month and publish the report.
+    </p>
+
+    <%= image_tag "final_report.png" %>
+
+    <p>
+      Once the report is published, editors will be able to see the overview and the pinned comments for each post &mdash; basically the same thing we did for the first round of bonuses, but streamlined.
+    </p>
+
+  <% else %>
+    <h2>Editors</h2>
+    <p>In order to submit stories, you'll need to install the bookmarklet below:</p>
+
+    <p><a href="javascript:void((function() %7Bvar element%3Ddocument.createElement(%27script%27)%3B element.setAttribute(%27src%27, %27https://gawker-reader.herokuapp.com/bookmarklet.js%27)%3B document.body.appendChild(element)%7D)())">Submit to Reader</a></p>
+
+    <p>Just drag and drop that link into your browser's toolbar.</p>
+
+    <p>The first time you use it to submit a story, you may need to allow popups from your site.</p>
+    <%= image_tag "allow_popups.png" %>
+
+    <p>Once you're up and running, you can submit stories whenever you want throughout the month. When you're reading a story you'd like to submit, just click the bookmarklet, add a note about what made this story great (don't worry, you can edit it later), and click "Save".</p>
+
+    <%= image_tag "submit_story.png" %>
+
+    <p>
+      You can keep an eye on how many stories you've submitted, remove stories, or edit your comment at any time.
+    </p>
+
+    <%= image_tag "edit.png" %>
+
+    <p>
+      At the end of the month, this is where the Politburo will read and comment on your stories, and put together your report for the month.
+    </p>
+
+    <p>
+      Any questions? Ping Adam.
+    </p>
+
+  <% end %>
+</div>
