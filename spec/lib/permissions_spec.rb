@@ -17,14 +17,14 @@ before(:each) do
                                   }
                          )
 
-  @post = instance_double("Post", {
-                                    domain: "gawker.com"
-                                  }
-                         )
+  # @post = instance_double("Post", {
+  #                                   domain: "gawker.com"
+  #                                 }
+  #                        )
 end
 
   it "let's users with the same domain do things" do
-    expect(Permissions.site_owner?(@user, @post)).to eq true
-    expect(Permissions.site_owner?(@politburo_user, @post)).to eq false
+    expect(Permissions.site_owner?(@user, "gawker.com")).to eq true
+    expect(Permissions.site_owner?(@politburo_user, "gawker.com")).to eq false
   end
 end

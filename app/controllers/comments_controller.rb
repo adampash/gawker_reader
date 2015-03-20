@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
-  before_action :is_politburo
+  before_action :is_politburo, only: :pin
+
   def create
     post = Post.find(params[:post_id])
     @comment = Comment.find_or_create_from_params params[:text], current_user, post

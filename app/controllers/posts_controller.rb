@@ -42,6 +42,8 @@ class PostsController < ApplicationController
   protected
   def site_owner
     flash[:notice] = "Only site leads can submit new stories. If you're a site lead and you're getting this message, ping Adam on Slack."
-    redirect_to root_path unless current_user.site_owner
+    # require 'pry'; binding.pry
+    domain = params["url"].match(/https?:\/\/(\w+\.com)/)[1]
+    redirect_to root_path unless Permissions.site_owner?(current_user, domain)
   end
 end
