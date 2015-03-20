@@ -37,7 +37,7 @@ gem 'devise'
 gem "omniauth-google-oauth2"
 
 # kinja api
-gem 'kinja'
+gem 'kinja', '>= 0.0.8'
 
 gem 'htmlentities'
 gem 'rack-cors'

@@ -105,7 +105,7 @@ GEM
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
-    kinja (0.0.7)
+    kinja (0.0.8)
       httparty
     listen (2.9.0)
       celluloid (>= 0.15.2)
@@ -270,7 +270,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   kaminari
-  kinja
+  kinja (>= 0.0.8)
   omniauth-google-oauth2
   pg
   pry
