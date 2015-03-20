@@ -1,15 +1,11 @@
 <% if current_user.politburo? %>
-  Hey Politburo member! Click <%= link_to "here to build the report", build_report_path(@site) %>
+  Hey Politburo member! <%= link_to "+ Create a new report", build_report_path(@site) %>
 <% end %>
-<% @grouped_posts.each do |group| %>
-  <h3 class="month"><%= group[0] %> (<%= group.flatten.count - 1 %>)</h3>
-  <% posts = group[1..-1].flatten %>
-  <% posts.each do |post| %>
-    <%= render partial: 'posts/preview', locals: { post: post } %>
-    <div class="comments">
-      <% post.pinned_comments.each do |comment| %>
-        <%= render comment %>
-      <% end %>
-    </div>
+
+<% if @reports.empty? %>
+  <h4>No reports filed for <%= @site.upcase %> yet.</h4>
+<% else %>
+  <% @reports.each do |report| %>
+    <%= link_to report.name, report_path(report) %>
   <% end %>
 <% end %>

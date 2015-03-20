@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   get 'reports/politburo/:site' => 'reports#politburo', as: :build_report
   get 'reports' => 'reports#index'
   get 'reports/:site' => 'reports#index', as: :report
+  post 'reports/comment' => 'reports#comment'
   get 'reports/:site/:month' => 'reports#index'
+  get 'reports/politburo/:site/:month' => 'reports#build', as: :build_new_report
 
   # devise_for :users
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }

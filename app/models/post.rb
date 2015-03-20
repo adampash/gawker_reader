@@ -42,6 +42,11 @@ class Post < ActiveRecord::Base
     where(domain: "#{site}.com").order('publish_time DESC')
   end
 
+  def self.in_month(month, domain)
+    time = DateTime.strptime(month, "%B %Y")
+    where(publish_time: time..time.end_of_month)
+  end
+
   def owner_comment
     owner_comment = comments.where(comment_type: 'owner')
     owner_comment.empty? ? nil : owner_comment.first

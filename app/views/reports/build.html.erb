@@ -1,0 +1,18 @@
+<h2>Published: <%= @report.published %></h2>
+<h3>Overall:</h3>
+<div class="overview">
+  <textarea class="overall" placeholder="Write overall comments for the month here..."><%= @report.summary %></textarea>
+  <button class="save" data-report-id="<%= @report.id %>">Save</button>
+  <div class="message"></div>
+</div>
+<h3 class="month"><%= @report.name %> (<%= @posts.count %>)</h3>
+<% @posts.each do |post| %>
+  <%= render partial: 'posts/preview', locals: { post: post } %>
+  <div class="comments">
+    <% post.politburo_comments.each do |comment| %>
+      <%= render comment %>
+    <% end %>
+  </div>
+<% end %>
+
+
