@@ -5,6 +5,11 @@
       <%= link_to raw("<li>Dashboard</li>"), dashboard_path %>
       <% if current_user.politburo? %>
         <%= render_sites %>
+      <% else %>
+        <%= render_site(current_user.domain.split('.')[0]) %>
+        <% if current_user.site_owner %>
+          <%= render_report_link(current_user.domain.split('.')[0]) %>
+        <% end %>
       <% end %>
       <%= link_to(raw("<li>Admin</li>"), "/admin") if current_user.admin? %>
       <%= link_to raw("<li>Logout</li>"), "/logout" %>

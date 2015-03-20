@@ -119,4 +119,12 @@ body {
     // margin-bottom: 20px;
     // margin-top: 0;
   }
+  textarea.editor_comment {
+    width: 390px;
+  }
+  .preview {
+    button.save {
+      display: none;
+    }
+  }
 }

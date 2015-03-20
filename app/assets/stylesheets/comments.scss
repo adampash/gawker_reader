@@ -39,17 +39,6 @@
   textarea {
     width: 280px;
     height: 300px;
-    font-size: 16px;
-    font-family: Georgia;
-    padding: 10px;
-    border: 1px solid transparent;
-    &:hover {
-      background: rgb(255, 255, 173);
-    }
-    &:focus {
-      border: 1px solid #ddd;
-      outline: none;
-    }
   }
   h5 {
     padding: 0 10px;
@@ -75,4 +64,17 @@ button {
 .message {
   text-align: center;
   padding: 10px;
+}
+textarea {
+  border: 1px solid transparent;
+  font-size: 16px;
+  font-family: Georgia;
+  padding: 10px;
+  &:hover {
+    background: rgb(255, 255, 173);
+  }
+  &:focus {
+    border: 1px solid #ddd;
+    outline: none;
+  }
 }

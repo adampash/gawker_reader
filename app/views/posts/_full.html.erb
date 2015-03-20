@@ -1,5 +1,5 @@
 <% if post.owner_comment %>
-  <p><%= post.owner_comment.user.first_name %>: <%= post.owner_comment.text %></p>
+  <p><%= post.owner_comment.user.name %>: <%= post.owner_comment.text %></p>
 <% end %>
 <h2><%= link_to raw(@decoder.decode post.headline), post_path(post) %></h2>
 <%= raw post.text %>

@@ -12,11 +12,20 @@ module ApplicationHelper
   def render_sites
     links = []
     SITES.each do |site|
-      links.push link_to raw("<li>#{site.upcase}</li>"), "/#{site}"
+      links.push render_site(site)
       if current_user.politburo
-        links.push link_to raw("<li class=\"report\">Report</li>"), report_path(site)
+        links.push render_report_link(site)
       end
     end
     raw links.join("")
   end
+
+  def render_site(site)
+    link_to raw("<li>#{site.upcase}</li>"), "/#{site}"
+  end
+
+  def render_report_link(site)
+    link_to raw("<li class=\"report\">Report</li>"), report_path(site)
+  end
+
 end

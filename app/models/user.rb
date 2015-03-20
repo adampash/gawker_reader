@@ -29,8 +29,12 @@ class User < ActiveRecord::Base
     name.split(" ")[0]
   end
 
+  def domain
+    email.match(/@(\w+\.com)/)[1]
+  end
+
   def owns_this_site(site)
-    site_owner and email.match(/@(\w+)\./)[1] == site
+    site_owner and domain == site
   end
 
 end
