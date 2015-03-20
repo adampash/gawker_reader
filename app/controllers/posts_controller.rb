@@ -1,5 +1,3 @@
-require 'htmlentities'
-
 class PostsController < ApplicationController
   before_action :authenticate_user!
   before_action :site_owner, :only => [:submit]

@@ -3,6 +3,6 @@
 <% end %>
 <div class="sites">
 <% @sites.each do |site| %>
-  <h2 class="big_site"><%= link_to site, site %></h2>
+  <h2 class="big_site"><%= link_to site.upcase, site %></h2>
 <% end %>
 </div>

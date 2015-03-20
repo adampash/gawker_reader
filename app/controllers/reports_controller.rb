@@ -1,6 +1,8 @@
 class ReportsController < ApplicationController
-  before_action :is_politburo, only: :politburo
-  before_action :is_owner, only: :index
+  before_action :authenticate_user!
+  before_action :is_politburo, except: [:index, :show]
+  before_action :is_owner, only: [:index, :show]
+  before_action :owns_this_site, only: [:index, :show]
 
   def politburo
     @site = params[:site]

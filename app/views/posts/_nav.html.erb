@@ -15,5 +15,5 @@
       <%= link_to raw("<li>Logout</li>"), "/logout" %>
     <% end %>
   </ul>
-  <%= site_header(@site) %>
+  <%= site_header(@site || params[:site]) %>
 </nav>
