@@ -25,7 +25,7 @@ module ApplicationHelper
   end
 
   def render_report_link(site)
-    link_to raw("<li class=\"report\">Report</li>"), report_path(site)
+    link_to raw("<li class=\"report\">Reports</li>"), report_path(site)
   end
 
 end

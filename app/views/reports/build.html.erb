@@ -1,4 +1,8 @@
-<h2>Published: <%= @report.published %></h2>
+<h2>Published: 
+  <a href="#" class="toggle" data-url="/reports/publish/<%= @report.id %>" data-key="published" data-val="<%= @report.published %>">
+    <%= @report.published? ? "Yes" : "No" %>
+  </a>
+</h2>
 <h3>Overall:</h3>
 <div class="overview">
   <textarea class="overall" placeholder="Write overall comments for the month here..."><%= @report.summary %></textarea>

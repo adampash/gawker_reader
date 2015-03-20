@@ -11,7 +11,8 @@ Rails.application.routes.draw do
   get 'reports' => 'reports#index'
   get 'reports/:site' => 'reports#index', as: :report
   post 'reports/comment' => 'reports#comment'
-  get 'reports/:site/:month' => 'reports#index'
+  get 'reports/:site/:month' => 'reports#show', as: :show_report
+  post 'reports/publish/:id' => 'reports#publish', as: :publish_report
   get 'reports/politburo/:site/:month' => 'reports#build', as: :build_new_report
 
   # devise_for :users

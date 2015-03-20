@@ -12,6 +12,10 @@ class Report < ActiveRecord::Base
     where(domain: "#{site}.com").order('created_at DESC')
   end
 
+  def self.published
+    where(published: true)
+  end
+
   def posts
     Post.in_month(name, domain)
   end

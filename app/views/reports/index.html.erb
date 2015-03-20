@@ -6,6 +6,6 @@
   <h4>No reports filed for <%= @site.upcase %> yet.</h4>
 <% else %>
   <% @reports.each do |report| %>
-    <%= link_to report.name, report_path(report) %>
+    <%= link_to report.name, show_report_path(report.domain.split('.')[0], report.name) %>
   <% end %>
 <% end %>
