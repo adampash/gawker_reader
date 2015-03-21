@@ -1,3 +1,4 @@
+Bugfix: http://review.gawker.com/the-gawker-review-weekend-reading-list-3-21-15-1691782874
 Let user click "Next" to get next story in series
 Get rid of all the @decoder instantiations
 Confirm navigate away if comment field has changed and not been saved

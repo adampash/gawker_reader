@@ -7,10 +7,9 @@ module PostsHelper
 
   def timestamp(time, opts={})
     opts[:short] = opts[:short] || false
-    if opts[:short]
-      strf = "%-m/%-d/%Y"
-    else
-      strf = "%-m/%-d/%Y %-l:%M%P"
+    strf = "%-m.%-d.%Y"
+    unless opts[:short]
+      strf = "#{strf} %-l:%M%P"
     end
     raw "<span class=\"timestamp\">#{time.in_time_zone("Eastern Time (US & Canada)").strftime(strf)}</span>"
   end

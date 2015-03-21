@@ -1,20 +1,25 @@
 <div class="preview" id="<%= post.id %>">
   <% if @owns %>
-    <a href="#" alt="remove" class="remove_post" data-post-id="<%= post.id %>">X</a>
+    <a href="#" alt="remove" class="remove_post" data-post-id="<%= post.id %>"><i class="fa fa-times"></i></a>
   <% end %>
-  <%= link_to image_tag(post.preview_image), post_path(post) %>
-  <h2><%= link_to raw(@decoder.decode post.headline), post_path(post) %></h2>
-  <%= timestamp(post.publish_time, short: true) unless current_user.owns_this_site(post.domain) %>
-  <% if current_user.owns_this_site(post.domain) and post.owner_comment and !defined? not_editable %>
-    <div class="comment">
-      <div class="user">
-        <div class="name"><%= post.owner_comment.user.name %>:</div>
+  <div class="image_container">
+    <%= link_to image_tag(post.preview_image), post_path(post) %>
+  </div>
+  <div class="text">
+    <h2 class="headline"><%= link_to raw(@decoder.decode post.headline), post_path(post) %></h2>
+    <%# <%= timestamp(post.publish_time, short: true) unless current_user.owns_this_site(post.domain) %>
+    <%= timestamp(post.publish_time, short: true) %>
+    <% if current_user.owns_this_site(post.domain) and post.owner_comment and !defined? not_editable %>
+      <div class="user editor">
+        <div class="name"><%= post.owner_comment.user.name %></div>
       </div>
-    </div>
-    <textarea placeholder="Share your thoughts on this post..." class="editor_comment"><%= post.owner_comment.text %></textarea>
-    <button class="save" data-post-id="<%= post.id %>">Save</button>
-    <div class="message"></div>
-  <% elsif post.owner_comment %>
-    <p><%= post.owner_comment.user.name %>: <%= post.owner_comment.text %></p>
-  <% end %>
+      <textarea placeholder="Share your thoughts on this post..." class="editor_comment"><%= post.owner_comment.text %></textarea>
+      <button class="save" data-post-id="<%= post.id %>">Save</button>
+      <h5 class="message"></h5>
+    <% elsif post.owner_comment %>
+      <div class="user editor"><%= post.owner_comment.user.name %></div>
+      <blockquote class="editor_comment"> <%= post.owner_comment.text %></blockquote>
+    <% end %>
+  </div>
+  <div style="clear: both;"></div>
 </div>

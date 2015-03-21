@@ -1,5 +1,5 @@
 <% @grouped_posts.each do |group| %>
-  <h3 class="month"><%= group[0] %> (<%= group.flatten.count - 1 %>)</h3>
+  <h3 class="month"><%= group[0] %> <span class="num_posts"><%= group.flatten.count - 1 %> posts</span></h3>
   <% posts = group[1..-1].flatten %>
   <% posts.each do |post| %>
     <%# <% require 'pry'; binding.pry %>

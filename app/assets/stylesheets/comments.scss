@@ -52,29 +52,32 @@
 button {
   cursor: pointer;
   width: 302px;
-  font-size: 20px;
-  padding: 10px 0;
-  background: rgb(53, 127, 224);
-  color: white;
+  font-size: 14px;
+  padding: 8px 0;
+  margin-bottom: 10px;
+  background: #EBEBEC;
+  color: rgb(100, 98, 98);
   border: none;
   &:hover {
-    background: #056CF2;
+    color: black;
   }
 }
 .message {
   text-align: center;
-  padding: 10px;
 }
 textarea {
   border: 1px solid transparent;
   font-size: 16px;
   font-family: Georgia;
-  padding: 10px;
+  padding: 5px 10px;
   &:hover {
-    background: rgb(255, 255, 173);
+    background: #ECECEB;
   }
   &:focus {
     border: 1px solid #ddd;
     outline: none;
   }
+}
+.top_comment {
+  border-bottom: 1px solid #ddd;
 }

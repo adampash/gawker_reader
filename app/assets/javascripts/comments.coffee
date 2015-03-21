@@ -4,7 +4,7 @@
 
 ready = ->
   $('.floating_comments button, .preview button.save, .overview button.save').on 'click', ->
-    comment = $(@).parent('.floating_comments, .preview, .overview').find('textarea').val()
+    comment = $(@).parents('.floating_comments, .preview, .overview').find('textarea').val()
     post_id = $(@).data('post-id')
     if post_id?
       url = "/comments"
@@ -20,7 +20,7 @@ ready = ->
       url: url
       data: params
       success: (result) =>
-        message = $(@).parent('.floating_comments, .preview, .overview').find('.message')
+        message = $(@).parents('.floating_comments, .preview, .overview').find('.message')
         message.text("Comment saved")
         $(@).hide()
         setTimeout ->
@@ -33,7 +33,7 @@ ready = ->
     $('.floating_comments button').show()
 
   $('.preview textarea, .overview textarea').on 'focus', ->
-    $(@).parent('.preview, .overview').find('button.save').show()
+    $(@).parents('.preview, .overview').find('button.save').show()
 
   $('.notes button.cancel').on 'click', ->
     $.ajax

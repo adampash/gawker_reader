@@ -1,9 +1,14 @@
 <% if post.owner_comment %>
-  <p><%= post.owner_comment.user.name %>: <%= post.owner_comment.text %></p>
+  <div class="top_comment">
+    <div class="user editor"><%= post.owner_comment.user.name %></div>
+    <blockquote class="editor_comment"> <%= post.owner_comment.text %></blockquote>
+  </div>
 <% end %>
-<h2><%= link_to raw(@decoder.decode post.headline), post_path(post) %></h2>
+<h2 class="headline full"><%= @decoder.decode post.headline %></h2>
 <%= timestamp(post.publish_time) %>
-<%= raw post.text %>
+<div class="post_body">
+  <%= raw post.text %>
+</div>
 <h5 class="byline">Written by <%= post.author_name %></h5>
-<%= link_to "Original", post.url, target: "_blank" %>
+<h5 class="original"><%= link_to raw("<i class=\"fa fa-external-link\"></i> Original post "), post.url, target: "_blank" %></h5>
 <%= render partial: 'comments/floating_comment' if current_user.politburo? %>
