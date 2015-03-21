@@ -4,6 +4,7 @@
   <% end %>
   <%= link_to image_tag(post.preview_image), post_path(post) %>
   <h2><%= link_to raw(@decoder.decode post.headline), post_path(post) %></h2>
+  <%= timestamp(post.publish_time, short: true) unless current_user.owns_this_site(post.domain) %>
   <% if current_user.owns_this_site(post.domain) and post.owner_comment and !defined? not_editable %>
     <div class="comment">
       <div class="user">
