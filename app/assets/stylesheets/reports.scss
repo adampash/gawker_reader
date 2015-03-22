@@ -49,10 +49,34 @@ div.overview {
 
 .reports {
   // padding: 20px;
+  // .report_link {
+  //   font-weight: bold;
+  //   font-size: 20px;
+  //   display: block;
+  //   // padding: 10px;
+  // }
+}
+body.index.reports {
+  .status {
+    // margin-bottom: 20px;
+  }
+  h4 {
+    font-size: 32px;
+    line-height: 36px;
+    padding: 0;
+    margin: 0;
+    &.year, &.filed {
+      color: #ccc;
+      margin-top: 40px;
+    }
+    // &.year {
+    //   margin-top: 30px;
+    // }
+  }
   .report_link {
-    font-weight: bold;
-    font-size: 20px;
-    display: block;
-    // padding: 10px;
+    color: black;
+    &:hover {
+      color: red;
+    }
   }
 }

@@ -15,6 +15,8 @@ class ReportsController < ApplicationController
   def index
     @site = params[:site]
     @reports = Report.by_site(@site).published.page(params[:page] || 1).per(20)
+    @grouped_reports = @reports.group_by { |group| group.name.split(" ")[1].to_i }
+    # require 'pry'; binding.pry
     # @month = params[:month]
     # @decoder = HTMLEntities.new
     # @grouped_posts = Post.group(Post.by_site(@site).page(params[:page] || 1).per(20))
@@ -27,6 +29,7 @@ class ReportsController < ApplicationController
     end
     @decoder = HTMLEntities.new
     @posts = @report.posts
+    @pinnable = true
   end
 
   def publish
@@ -52,6 +55,7 @@ class ReportsController < ApplicationController
     redirect_to site_path(params[:site]) unless @report.published or current_user.politburo
     @decoder = HTMLEntities.new
     @posts = @report.posts
+    @pinnable = false
   end
 
 end

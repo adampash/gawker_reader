@@ -24,7 +24,7 @@ html {
 }
 
 @media only screen and (max-width: 740px) {
-  body {
+  body:not(.preview.posts) {
     h1.site {
       font-size: 17px;
       letter-spacing: 0.5px;
@@ -148,6 +148,9 @@ html {
     display: inline;
   }
   .setup {
+    padding: 5px;
+  }
+  .reports {
     padding: 5px;
   }
 }
