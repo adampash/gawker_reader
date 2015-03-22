@@ -6,12 +6,10 @@ class PostsController < ApplicationController
   def index
     @site = params[:site]
     @owns = current_user.owns_this_site("#{@site}.com")
-    @decoder = HTMLEntities.new
     @grouped_posts = Post.group(Post.by_site(@site).page(params[:page] || 1).per(20))
   end
 
   def create
-    # @decoder = HTMLEntities.new
     @post = Post.fetch_and_create params[:url], current_user
     render json: { id: @post.id }
   end
@@ -21,14 +19,12 @@ class PostsController < ApplicationController
   end
 
   def show
-    @decoder = HTMLEntities.new
     @comment = Comment.post_comment_for_user(params[:id], current_user.id)
     @post = Post.find(params[:id])
     @site = @post.domain.gsub(".com", "")
   end
 
   def preview
-    @decoder = HTMLEntities.new
     @post = Post.find(params[:id])
   end
 

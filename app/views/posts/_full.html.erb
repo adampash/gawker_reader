@@ -11,7 +11,7 @@
     <% end %>
   </div>
 <% end %>
-<h2 class="headline full"><%= @decoder.decode post.headline %></h2>
+<h2 class="headline full"><%= raw post.headline %></h2>
 <%= timestamp(post.publish_time) %>
 <div class="post_body">
   <%= raw post.text %>
