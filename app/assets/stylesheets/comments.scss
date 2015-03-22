@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import 'type';
+@import 'placeholder';
+
 .comments {
   padding: 0px 0px 20px;
   // border-bottom: 1px solid #ddd;
@@ -41,7 +43,6 @@
   height: 350px;
   textarea {
     width: 280px;
-    height: 300px;
     resize: none;
     font-family: $sans;
     &.politburo_comment {
@@ -57,11 +58,11 @@
   }
   button {
     display: none;
+    width: 100px;
   }
 }
 button {
   cursor: pointer;
-  width: 302px;
   font-size: 14px;
   padding: 8px 0;
   margin-bottom: 10px;
@@ -72,6 +73,9 @@ button {
     color: black;
   }
 }
+.floating_comments .message {
+  text-align: left;
+}
 .message {
   text-align: center;
 }
@@ -81,7 +85,8 @@ textarea {
   font-family: Georgia;
   padding: 5px 10px;
   &:hover {
-    background: #F9F9F9;
+    border: 1px solid #ddd;
+    // background: #F9F9F9;
   }
   &:focus {
     border: 1px solid #ddd;

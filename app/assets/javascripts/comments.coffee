@@ -3,8 +3,10 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 ready = ->
-  $('.floating_comments button, .preview button.save, .overview button.save').on 'click', ->
-    comment = $(@).parents('.floating_comments, .preview, .overview').find('textarea').val()
+  $('textarea').elastic()
+
+  $('.floating_comments button, .preview button.save, .overview button.save, .top_comment button.save').on 'click', ->
+    comment = $(@).parents('.floating_comments, .preview, .overview, .top_comment').find('textarea').val()
     post_id = $(@).data('post-id')
     if post_id?
       url = "/comments"
@@ -20,7 +22,7 @@ ready = ->
       url: url
       data: params
       success: (result) =>
-        message = $(@).parents('.floating_comments, .preview, .overview').find('.message')
+        message = $(@).parents('.floating_comments, .preview, .overview, .top_comment').find('.message')
         message.text("Comment saved")
         $(@).hide()
         setTimeout ->
@@ -32,8 +34,8 @@ ready = ->
   $('.floating_comments textarea').on 'focus', ->
     $('.floating_comments button').show()
 
-  $('.preview textarea, .overview textarea').on 'focus', ->
-    $(@).parents('.preview, .overview').find('button.save').show()
+  $('.preview textarea, .overview textarea, .top_comment textarea').on 'focus', ->
+    $(@).parents('.preview, .overview, .top_comment').find('button.save').show()
 
   $('.notes button.cancel').on 'click', ->
     $.ajax

@@ -1,6 +1,6 @@
-<% flash.each do |key, value| %>
-  <%= content_tag :div, value, class: "flash #{key}" %>
-<% end %>
+<%# <% flash.each do |key, value| %>
+<%#   <%= content_tag :div, value, class: "flash #{key}" %>
+<%# <% end %>
 <div class="sites">
 <% @sites.each do |site| %>
   <%= link_to content_tag(:h2, site.upcase, class: :big_site), site %>

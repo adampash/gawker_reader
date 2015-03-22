@@ -8,7 +8,10 @@ body {
   margin: 0;
   padding: 0;
   font-family: $sans;
-  font-weight: 300;
+  font-weight: normal;
+  &.pages.welcome {
+    background: #F4F2F2;
+  }
   &.show.posts .main {
     max-width: 640px;
   }
@@ -34,8 +37,8 @@ body {
       &:hover .remove_post {
         display: inline;
       }
-      h2 {
-        font-size: 22px;
+      h2.headline {
+        font-size: 20px;
         margin-bottom: 0;
       }
       .first-text {
@@ -169,7 +172,7 @@ body {
     // margin-bottom: 20px;
     // margin-top: 0;
   }
-  .preview, .overview {
+  .preview, .overview, .top_comment {
     button.save {
       display: none;
       width: 80px;
@@ -178,8 +181,7 @@ body {
   }
   .timestamp {
     color: rgb(145, 145, 145);
-    font-size: 14px;
-    padding-top: 5px;
+    font-size: 12px;
     display: inline-block;
   }
   .num_posts {
@@ -206,8 +208,13 @@ body {
     font-weight: bold;
     font-size: 15px;
     font-family: $sans;
-    margin-top: 21px;
+    margin-top: 13px;
     color: red;
+  }
+  &.show.posts {
+    .user.editor {
+      margin-top: 23px;
+    }
   }
   .editor.comment {
     padding-left: 10px;
@@ -215,20 +222,25 @@ body {
   blockquote, textarea, div {
     &.editor_comment, &.politburo_comment, &.overall {
       margin: 6px 0px 25px 0px;
-      padding-left: 22px;
+      // padding-left: 22px;
+      padding: 12px 17px;
       font-family: $sans_norm;
       font-size: 15px;
-      line-height: 21px;
+      line-height: 22px;
       // border-left: 1px solid #ddd;
     }
   }
   textarea.editor_comment {
-    width: 94%;
+    width: 100%;
     font-family: $sans_norm;
     font-size: 15px;
     line-height: 21px;
     margin: 5px 0 5px;
     resize: none;
+    background: #F9F9F9;
+    &:hover {
+      border: 1px solid #ddd;
+    }
   }
   .original a {
     color: red;
@@ -239,5 +251,8 @@ body {
       font-size: 18px;
       margin: 42px 0 -7px;
     }
+  }
+  .preview + .month {
+    margin-top: 40px !important;
   }
 }

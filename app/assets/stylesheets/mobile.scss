@@ -5,6 +5,24 @@ html {
   box-sizing: inherit;
 }
 
+@media only screen and (max-width: 1310px) {
+  .floating_comments {
+    width: 100%;
+    position: relative;
+    padding: 0 10px;
+    margin: 0;
+    top: 0;
+    right: 0;
+    textarea {
+      width: 100%;
+      height: 200px;
+      margin: 0 !important;
+      // background: 1px solid #ddd;
+      background: #F9F9F9;
+    }
+  }
+}
+
 @media only screen and (max-width: 740px) {
   body {
     h1.site {
@@ -121,21 +139,6 @@ html {
     margin-top: 16px !important;
     blockquote {
       padding: 12px 8px;
-    }
-  }
-  .floating_comments {
-    width: 100%;
-    position: relative;
-    padding: 0 10px;
-    margin: 0;
-    top: 0;
-    right: 0;
-    textarea {
-      width: 100%;
-      height: 200px;
-      margin: 0 !important;
-      // background: 1px solid #ddd;
-      background: #F9F9F9;
     }
   }
   .timestamp {

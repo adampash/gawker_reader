@@ -8,3 +8,28 @@
     max-width: 100%;
   }
 }
+
+a.login {
+  text-rendering: optimizeLegibility;
+  background: #808080;
+  width: 400px;
+  display: block;
+  text-align: center;
+  padding: 16px;
+  margin: 200px auto 20px;
+  color: white;
+  text-transform: uppercase;
+  // font-weight: bold;
+  font-size: 15px;
+  letter-spacing: 1.5px;
+  &:hover {
+    background: #b3b3b3;
+  }
+}
+.login_message {
+  font-size: 15px;
+  color: #b3b3b3;
+  line-height: 20px;
+  margin: 0 auto;
+  width: 400px;
+}

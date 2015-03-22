@@ -3,6 +3,9 @@
   <%= image_tag current_user.avatar %>
   <%= link_to "Logout", user_logout_path %>
 <% else %>
-  <h1><%= link_to "Login", user_omniauth_authorize_path(provider: :google_oauth2) %></h1>
+  <%= link_to "Log in", user_omniauth_authorize_path(provider: :google_oauth2), class: :login %>
+  <div class="login_message">
+    Log in will redirect to your Google sign in. Please sign in only with your Gawker email address.
+  </div>
 <% end %>
 
