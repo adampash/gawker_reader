@@ -13,7 +13,7 @@ class Comment < ActiveRecord::Base
         comment_type: comment_type
       )
     else
-      comment.update_attributes(text: text)
+      comment.update_attributes(text: text, user_id: user.id)
     end
     comment
   end

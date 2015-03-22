@@ -3,7 +3,8 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 ready = ->
-  $('textarea').elastic()
+  # $('textarea').elastic()
+  autosize($('textarea'))
 
   $('.floating_comments button, .preview button.save, .overview button.save, .top_comment button.save').on 'click', ->
     comment = $(@).parents('.floating_comments, .preview, .overview, .top_comment').find('textarea').val()
