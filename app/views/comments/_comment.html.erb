@@ -1,14 +1,14 @@
-<div class="comment">
+<div class="comment politburo_comment">
   <div class="user">
     <%= image_tag comment.user.avatar %>
-    <span class="name"><%= comment.user.name %></span>
+    <h5 class="name"><%= comment.user.name %></h5>
   </div>
   <% if @pinnable or current_user.politburo %>
-    <div class="pin">
-      Pinned: <a href="#" class="toggle" data-url="/comments/pin/<%= comment.id %>" data-key="pinned" data-val="<%= comment.pinned %>">
+    <h5 class="pin">
+      Use in report: <a href="#" class="toggle" data-url="/comments/pin/<%= comment.id %>" data-key="pinned" data-val="<%= comment.pinned %>">
         <%= comment.pinned? ? "Yes" : "No" %>
       </a>
-    </div>
+    </h5>
   <% end %>
   <div class="text">
     <%= raw comment.text %>

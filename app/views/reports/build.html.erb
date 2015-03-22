@@ -1,21 +1,23 @@
-<h2>Published: 
+<h5>Published: 
   <a href="#" class="toggle" data-url="/reports/publish/<%= @report.id %>" data-key="published" data-val="<%= @report.published %>">
     <%= @report.published? ? "Yes" : "No" %>
   </a>
-</h2>
-<h3>Overall:</h3>
+</h5>
 <div class="overview">
+  <h3>Notes on <%= @report.name %></h3>
   <textarea class="overall" placeholder="Write overall comments for the month here..."><%= @report.summary %></textarea>
   <button class="save" data-report-id="<%= @report.id %>">Save</button>
-  <div class="message"></div>
+  <h5 class="message"></h5>
 </div>
-<h3 class="month"><%= @report.name %> (<%= @posts.count %>)</h3>
+<h3 class="month"><%= @report.name %> <span class="num_posts"><%= @posts.count %> posts</span></h3>
 <% @posts.each do |post| %>
-  <%= render partial: 'posts/preview', locals: { post: post } %>
-  <div class="comments">
-    <% post.politburo_comments.each do |comment| %>
-      <%= render comment %>
-    <% end %>
+  <div class="post">
+    <%= render partial: 'posts/preview', locals: { post: post } %>
+    <div class="comments">
+      <% post.politburo_comments.each do |comment| %>
+        <%= render comment %>
+      <% end %>
+    </div>
   </div>
 <% end %>
 

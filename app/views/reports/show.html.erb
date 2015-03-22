@@ -1,11 +1,15 @@
-<h3>Overall:</h3>
-<p><%= simple_format @report.summary %></p>
-<h3 class="month"><%= @report.name %> (<%= @posts.count %>)</h3>
+<div class="overview">
+  <h3>Notes on <%= @report.name %></h3>
+  <div class="overall"><%= simple_format @report.summary %></div>
+</div>
+<h3 class="month"><%= @report.name %> <span class="num_posts"><%= @posts.count %> posts</span></h3>
 <% @posts.each do |post| %>
-  <%= render partial: 'posts/preview', locals: { post: post, not_editable: true } %>
-  <div class="comments">
-    <% post.pinned_comments.each do |comment| %>
-      <%= render comment %>
-    <% end %>
+  <div class="post">
+    <%= render partial: 'posts/preview', locals: { post: post, not_editable: true } %>
+    <div class="comments">
+      <% post.pinned_comments.each do |comment| %>
+        <%= render comment %>
+      <% end %>
+    </div>
   </div>
 <% end %>

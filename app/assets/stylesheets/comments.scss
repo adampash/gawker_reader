@@ -1,12 +1,13 @@
 // Place all the styles related to the comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'type';
 .comments {
-  padding: 0px 20px 50px;
+  padding: 0px 0px 20px;
+  // border-bottom: 1px solid #ddd;
 }
 .comment {
-  border-top: 1px solid #ddd;
-  padding: 5px 0;
+  padding: 0px 0;
   font-family: Georgia;
   img {
     width: 30px;
@@ -19,7 +20,8 @@
     display: inline-block;
   }
   .name {
-    font-weight: bold;
+    // font-weight: bold;
+    font-family: $sans;
     margin-top: 5px;
     display: inline-block;
   }
@@ -28,17 +30,25 @@
   }
   .pin {
     float: right;
+    margin: 0;
   }
 }
 .floating_comments {
   position: fixed;
   right: 10px;
-  top: 80px;
+  top: 90px;
   width: 325px;
   height: 350px;
   textarea {
     width: 280px;
     height: 300px;
+    resize: none;
+    font-family: $sans;
+    &.politburo_comment {
+      padding-left: 10px;
+      padding-right: 10px;
+      margin-bottom: 0px;
+    }
   }
   h5 {
     padding: 0 10px;
@@ -71,7 +81,7 @@ textarea {
   font-family: Georgia;
   padding: 5px 10px;
   &:hover {
-    background: #ECECEB;
+    background: #F9F9F9;
   }
   &:focus {
     border: 1px solid #ddd;

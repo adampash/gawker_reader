@@ -7,7 +7,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class="<%= params[:action] %>">
+<body class="<%= "#{params[:action]} #{params[:controller]}" %>">
   <%= render partial: 'posts/nav' %>
   <div class="main">
     <%= yield %>

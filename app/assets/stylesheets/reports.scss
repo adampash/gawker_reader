@@ -2,17 +2,57 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-textarea.overall {
-  width: 100%;
-  height: 150px;
+@import 'type';
+body.reports {
+  background: #F4F2F2;
+  h3.month {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .post {
+    background: white;
+    margin: 20px 0;
+    padding: 30px;
+    // padding: 10px;
+  }
+  .preview {
+    margin-bottom: 16px;
+    img {
+      max-width: 270px;
+    }
+  }
+  .politburo_comment {
+    padding: 0 0 20px;
+    margin: 0;
+    border-bottom: 1px solid #ddd;
+  }
+}
+div.overview {
+  margin-top: 42px;
+  min-height: 280px;
+  .overall {
+    width: 100%;
+    min-height: 150px;
+    margin-bottom: 30px;
+    margin-top: 0;
+    padding-top: 20px;
+    max-width: 707px;
+    p {
+      font-family: $sans;
+    }
+  }
+  div.overall {
+    margin-bottom: 20px;
+    padding-top: 0;
+  }
 }
 
 .reports {
-  padding: 20px;
+  // padding: 20px;
   .report_link {
     font-weight: bold;
-    font-size: 24px;
+    font-size: 20px;
     display: block;
-    padding: 10px;
+    // padding: 10px;
   }
 }

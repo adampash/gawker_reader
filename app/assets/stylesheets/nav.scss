@@ -22,6 +22,8 @@ nav {
   }
   ul.dropdown {
     display: none;
+    z-index: 10000;
+    background: white;
     position: absolute;
     padding: 9px;
     background: white;

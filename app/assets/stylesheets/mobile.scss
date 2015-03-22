@@ -1,0 +1,151 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+@media only screen and (max-width: 740px) {
+  body {
+    h1.site {
+      font-size: 17px;
+      letter-spacing: 0.5px;
+    }
+    nav {
+      padding-left: 20px;
+      height: 50px;
+      ul.dropdown {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        left: 0;
+        top: 49px;
+      }
+    }
+    &.dashboard {
+      nav {
+        border-bottom: none;
+      }
+      width: 100%;
+      .main {
+        div.sites {
+          padding: 0;
+          margin: 0;
+          margin-top: 3px;
+          box-sizing: border-box;
+          // margin: 10px;
+          .big_site {
+            letter-spacing: 2.5px;
+            width: 100%;
+            margin: 3px 0;
+            box-sizing: border-box;
+            padding: 20px 0;
+            font-size: 15px;
+          }
+        }
+      }
+    }
+    .main {
+      h3.month {
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+        margin-bottom: 18px;
+        padding-left: 10px !important;
+      }
+      .preview {
+        width: 100% !important;
+        border-bottom: none !important;
+        .image_container {
+          width: 100% !important;
+          clear: both;
+          float: none !important;
+          img {
+            margin: 0;
+            max-width: 100%;
+          }
+        }
+        .text {
+          width: 100% !important;
+          float: none;
+          margin: 0;
+          padding: 0;
+          padding: 0 10px;
+          // max-width: 320px; // this is terrible TODO fix!
+          h2.headline {
+            box-sizing: border-box;
+            font-size: 18px;
+            padding-top: 5px;
+          }
+          textarea.editor_comment {
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            padding-left: 10px;
+          }
+          .user.editor {
+            margin-top: 7px;
+            .name {
+              // width: auto;
+              // display: inline;
+            }
+          }
+        }
+        .timestamp {
+          font-size: 11px;
+        }
+      }
+    }
+    &.reports {
+      .main {
+        .post {
+          padding: 10px;
+        }
+      }
+    }
+    .overview {
+      h3 {
+        padding-left: 10px;
+      }
+    }
+  }
+  .top_comment {
+    padding: 0 10px;
+    border-bottom: none;
+  }
+  h2.headline.full, .show .timestamp, .byline, .original, .post_body p:not(.has-media),blockquote,li,h1,h2.h3,h4,h5 {
+    padding: 0 10px;
+  }
+  h2.headline.full {
+    font-size: 18px;
+  }
+  .post_body {
+    margin-top: 16px !important;
+    blockquote {
+      padding: 12px 8px;
+    }
+  }
+  .floating_comments {
+    width: 100%;
+    position: relative;
+    padding: 0 10px;
+    margin: 0;
+    top: 0;
+    right: 0;
+    textarea {
+      width: 100%;
+      height: 200px;
+      margin: 0 !important;
+      // background: 1px solid #ddd;
+      background: #F9F9F9;
+    }
+  }
+  .timestamp {
+    font-size: 11px !important;
+  }
+  body .main .preview .remove_post {
+    display: inline;
+  }
+  .setup {
+    padding: 5px;
+  }
+}
+

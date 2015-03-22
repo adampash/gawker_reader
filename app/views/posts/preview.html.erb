@@ -1,13 +1,17 @@
 <div class="preview_container">
   <%= render partial: 'preview', locals: { post: @post, text_preview: false } %>
-  <div class="notes">
-    <h5>Notes</h5>
-    <textarea></textarea>
-    <div class="buttons">
-      <button class="cancel">Cancel</button>
-      <button class="save" data-post-id="<%=@post.id%>">Save</button>
+  <% if @post.owner_comment.nil? %>
+    <div class="notes">
+      <h5>Notes</h5>
+      <textarea tabindex="1"></textarea>
+      <div class="buttons">
+        <button class="cancel" tabindex="3" >Cancel</button>
+        <button class="save" data-post-id="<%=@post.id%>" tabindex="2">Save</button>
+      </div>
     </div>
-  </div>
+  <% else %>
+    <h5>This post was already submitted by <%= @post.user.name %>. If you want, you can edit the comment above.</h5>
+  <% end %>
 </div>
 
 <script>

@@ -1,6 +1,6 @@
 <div class="floating_comments">
   <h5>Notes</h5>
-  <textarea placeholder="Write your comments here"><%= @comment.text unless @comment.nil? %></textarea>
+  <textarea class="politburo_comment" placeholder="Write your comments here"><%= @comment.text unless @comment.nil? %></textarea>
   <button class="save" data-post-id="<%= @post.id %>">Save</button>
-  <div class="message"></div>
+  <h5 class="message"></h5>
 </div>

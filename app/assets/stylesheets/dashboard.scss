@@ -12,7 +12,7 @@ body.dashboard {
       }
       .big_site {
         display: inline-block;
-        width: 200px;
+        width: 285px;
         font-size: 18px;
         padding: 46px 40px;
         text-transform: capitalize;
@@ -22,6 +22,7 @@ body.dashboard {
         letter-spacing: 3.5px;
         &:hover {
           background: rgb(86, 87, 84);
+          background: red;
         }
       }
     }

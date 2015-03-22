@@ -1,12 +1,13 @@
 <% if current_user.politburo? %>
-  <div class="top message">
-    Hey Politburo member! <%= link_to "Click here to edit reports", build_report_path(@site) %>.
-  </div>
+  <h5 class="top">
+    Hey Politburo member! <%= link_to "Click here to edit and publish reports for #{@site.upcase}.", build_report_path(@site) %>
+  </h5>
 <% end %>
 
 <% if @reports.empty? %>
   <h4>No reports filed for <%= @site.upcase %> yet.</h4>
 <% else %>
+  <h4>Reports filed for <%= @site.upcase %></h4>
   <div class="reports">
     <% @reports.each do |report| %>
       <%= link_to report.name,
