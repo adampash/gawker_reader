@@ -1,3 +1,5 @@
+require 'slack_notifier'
+
 class User < ActiveRecord::Base
   WHITELISTED_EMAILS = /^\w.*@(gawker|deadspin|jezebel|kotaku|lifehacker|jalopnik|io9|gizmodo)\.com$/
   # Include default devise modules. Others available are:
