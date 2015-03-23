@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   # devise_for :users
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
-  get 'admin' => 'admin#index'
+  get 'admin' => 'admin#index', as: :admin
   post 'admin/toggle/:user_id' => 'admin#toggle'
   get 'posts/submit' => 'posts#submit'
   resources :posts

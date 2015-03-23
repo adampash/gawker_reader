@@ -21,8 +21,13 @@ class User < ActiveRecord::Base
          avatar: data["image"],
          password: Devise.friendly_token[0,20]
       )
+      new_user_notification(user)
     end
     user
+  end
+
+  def self.new_user_notification(user)
+    SlackNotifier.notify("#{user.name} just signed up #{admin_url}") if ENV["SLACK_TOKEN"]
   end
 
   def first_name
