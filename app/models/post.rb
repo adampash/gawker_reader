@@ -68,6 +68,10 @@ class Post < ActiveRecord::Base
     small_image.nil? ? "" : small_image["src"]
   end
 
+  def big_image_url
+    big_image.nil? ? "" : big_image["uri"]
+  end
+
   def excerpt
     data["excerpt"]
   end

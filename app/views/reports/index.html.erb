@@ -1,27 +1,27 @@
 <div class="report">
-  <% if current_user.politburo? %>
-    <h5 class="top">
-      Hey Politburo member!<br>
-      <%= link_to "Click here to edit and publish reports for #{cap_site @site}.", build_report_path(@site) %>
-    </h5>
-  <% end %>
+  <div class="reports_list">
+    <% if current_user.politburo? %>
+      <h5 class="top">
+        Hey Politburo member!<br>
+        <%= link_to "Click here to edit and publish reports for #{cap_site @site}.", build_report_path(@site) %>
+      </h5>
+    <% end %>
 
-  <div class="status">
-    <% if @reports.empty? %>
-      <h4>No reports filed for <%= @site.upcase %> yet.</h4>
-    <% else %>
-      <h4 class="filed">Reports filed for</h4>
-      <h4><%= cap_site(@site) %></h4>
-  </div>
-    <div class="reports">
+    <div class="status">
+      <% if @reports.empty? %>
+        <h4>No reports filed for <%= @site.upcase %> yet.</h4>
+      <% else %>
+        <h4 class="filed">Reports filed for</h4>
+        <h4><%= cap_site(@site) %></h4>
+      </div>
       <% @grouped_reports.each do |group| %>
         <h4 class="year"><%= group[0].to_s %></h4>
         <% reports = group[1..-1].flatten %>
         <% reports.each do |report| %>
           <h4>
             <%= link_to report.name.split(" ")[0],
-            show_report_path(report.domain.split('.')[0], report.name),
-            class: "report_link"
+              show_report_path(report.domain.split('.')[0], report.name),
+              class: "report_link"
             %>
           </h4>
         <% end %>

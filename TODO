@@ -1,6 +1,6 @@
+Twitter embeds need to work w/turbolinks see http://localhost:3000/posts/24
 Let user click "Next" to get next story in series
 Confirm navigate away if comment field has changed and not been saved
-Twitter embeds
 Require user to own site to submit story (right now any site owner can submit for any site)
 * check site_owner? on
   * submitting post (can only submit for a site the user owns)

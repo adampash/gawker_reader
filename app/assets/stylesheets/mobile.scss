@@ -24,14 +24,31 @@ html {
 }
 
 @media only screen and (max-width: 740px) {
-  body:not(.preview.posts) {
+  body {
+    word-wrap: break-word;
+    .full_image {
+      display: inline !important;
+      max-width: 100% !important;
+      width: 100% !important;
+    }
+    .small_image {
+      display: none !important;
+    }
+  }
+  body:not(.preview) {
     h1.site {
-      font-size: 17px;
-      letter-spacing: 0.5px;
     }
     nav {
       padding-left: 20px;
       height: 50px;
+      .menu {
+        margin-right: 0;
+      }
+      .fa, h1.site {
+        font-size: 18px;
+        // line-height: 18px;
+        letter-spacing: 0;
+      }
       ul.dropdown {
         width: 100%;
         padding: 0;
@@ -65,10 +82,13 @@ html {
     }
     .main {
       h3.month {
-        border-bottom: none !important;
         padding-bottom: 0 !important;
         margin-bottom: 18px;
-        padding-left: 10px !important;
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+      }
+      .overview + h3.month {
+        border-top: 1px solid #ddd !important;
       }
       .preview {
         width: 100% !important;
@@ -79,7 +99,6 @@ html {
           float: none !important;
           img {
             margin: 0;
-            max-width: 100%;
           }
         }
         .text {
@@ -88,7 +107,6 @@ html {
           margin: 0;
           padding: 0;
           padding: 0 10px;
-          // max-width: 320px; // this is terrible TODO fix!
           h2.headline {
             box-sizing: border-box;
             font-size: 18px;
@@ -114,8 +132,15 @@ html {
     }
     &.reports {
       .main {
+        .post + .post {
+          margin: 40px 10px 0;
+        }
         .post {
           padding: 10px;
+          margin: 20px 10px 0;
+        }
+        .text {
+          padding: 0;
         }
       }
     }
@@ -123,13 +148,16 @@ html {
       h3 {
         padding-left: 10px;
       }
+      .overall {
+        margin-bottom: 0px;
+      }
     }
   }
   .top_comment {
     padding: 0 10px;
     border-bottom: none;
   }
-  h2.headline.full, .show .timestamp, .byline, .original, .post_body p:not(.has-media),blockquote,li,h1,h2.h3,h4,h5 {
+  h2.headline.full, .show .timestamp, .byline, .original, .post_body p:not(.has-media),blockquote,li,h1,h2.h3,h4,h5,hr,small,small a {
     padding: 0 10px;
   }
   h2.headline.full {
@@ -150,8 +178,20 @@ html {
   .setup {
     padding: 5px;
   }
-  .reports {
+  .reports_list {
     padding: 5px;
   }
 }
 
+@media only screen and (max-width: 480px) {
+  body {
+    .full_image {
+      display: none !important;
+    }
+    .small_image {
+      display: inline !important;
+      max-width: 100% !important;
+      width: 100%;
+    }
+  }
+}

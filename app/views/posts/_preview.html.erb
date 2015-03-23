@@ -2,9 +2,12 @@
   <% if @owns %>
     <a href="#" alt="remove" class="remove_post" data-post-id="<%= post.id %>"><i class="fa fa-times"></i></a>
   <% end %>
-  <div class="image_container">
-    <%= link_to image_tag(post.preview_image), post_path(post) %>
-  </div>
+  <% unless post.preview_image.empty? %>
+    <div class="image_container">
+      <%= link_to image_tag(post.preview_image, class: :small_image ), post_path(post)%>
+      <%= link_to image_tag(post.big_image_url, class: :full_image ), post_path(post) %>
+    </div>
+  <% end %>
   <div class="text">
     <h2 class="headline"><%= link_to raw(post.headline), post_path(post) %></h2>
     <%# <%= timestamp(post.publish_time, short: true) unless current_user.owns_this_site(post.domain) %>
