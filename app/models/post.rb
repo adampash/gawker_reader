@@ -44,7 +44,7 @@ class Post < ActiveRecord::Base
 
   def self.in_month(month, domain)
     time = DateTime.strptime(month, "%B %Y")
-    where(publish_time: time..time.end_of_month)
+    where(publish_time: time..time.end_of_month).order('publish_time DESC')
   end
 
   def owner_comment
