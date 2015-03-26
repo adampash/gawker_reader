@@ -1,7 +1,7 @@
 .preview nav, .submit nav {
   display: none;
 }
-nav {
+nav:not(.pagination) {
   .site {
     // letter-spacing: 1px;
     // text-transform: uppercase;

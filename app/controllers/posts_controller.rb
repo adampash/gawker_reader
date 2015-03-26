@@ -6,7 +6,12 @@ class PostsController < ApplicationController
   def index
     @site = params[:site]
     @owns = current_user.owns_this_site("#{@site}.com")
-    @grouped_posts = Post.group(Post.by_site(@site).page(params[:page] || 1).per(20))
+    @posts = Post.by_site(@site).page(params[:page] || 1).per(20)
+    @grouped_posts = Post.group(@posts)
+    @post_count = {}
+    @grouped_posts.each do |group|
+      @post_count[group[0]] = Post.in_month(group[0], @site).count
+    end
   end
 
   def create
