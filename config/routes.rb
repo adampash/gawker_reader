@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get 'reports/politburo/:site/:month' => 'reports#build', as: :build_new_report
 
   # devise_for :users
+  get 'users/sign_in' => 'users#sign_in'
   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
 
   get 'admin' => 'admin#index', as: :admin
