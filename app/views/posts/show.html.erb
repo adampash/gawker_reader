@@ -1,2 +1,7 @@
 <%= render partial: 'full', locals: { post: @post } %>
 
+<div class="prev_and_next">
+  <%= link_to "Previous post", prev_post_path(@site, @post.publish_time.to_i) %>
+
+  <%= link_to "Next post", next_post_path(@site, @post.publish_time.to_i) %>
+</div>

@@ -33,6 +33,24 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def next
+    @post = Post.by_site(params[:site]).next(params[:publish_time])
+    if @post.nil?
+      redirect_to site_path(params[:site])
+    else
+      redirect_to @post
+    end
+  end
+
+  def prev
+    @post = Post.by_site(params[:site]).prev(params[:publish_time])
+    if @post.nil?
+      redirect_to site_path(params[:site])
+    else
+      redirect_to @post
+    end
+  end
+
   def destroy
     post = Post.find(params[:id]).destroy
     render json: {

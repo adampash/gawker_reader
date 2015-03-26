@@ -47,6 +47,16 @@ class Post < ActiveRecord::Base
     by_site(site).where(publish_time: time..time.end_of_month)
   end
 
+  def self.next(seconds_since_epoch)
+    time = DateTime.strptime(seconds_since_epoch.to_s, "%s")
+    where('publish_time < ?', time).first
+  end
+
+  def self.prev(seconds_since_epoch)
+    time = DateTime.strptime(seconds_since_epoch.to_s, "%s")
+    where('publish_time > ?', time).first
+  end
+
   def month_and_year
     publish_time.strftime("%B %Y")
   end

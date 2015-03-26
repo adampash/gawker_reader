@@ -23,13 +23,16 @@ Rails.application.routes.draw do
   post 'admin/toggle/:user_id' => 'admin#toggle'
   get 'posts/submit' => 'posts#submit'
   resources :posts
+  get 'posts/preview/:id' => 'posts#preview', as: :preview
+  get 'posts/:site/next/:publish_time' => 'posts#next', as: :next_post
+  get 'posts/:site/prev/:publish_time' => 'posts#prev', as: :prev_post
+
   resources :comments
   post 'comments/pin/:id' => 'comments#pin'
   get 'logout' => 'users#logout', as: :user_logout
   get 'dashboard' => 'pages#dashboard', as: :dashboard
   get 'setup' => 'pages#setup', as: :setup
   get ':site' => 'posts#index', as: :site
-  get 'posts/preview/:id' => 'posts#preview', as: :preview
   root 'pages#welcome'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

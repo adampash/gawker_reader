@@ -268,4 +268,9 @@ body {
   iframe.twitter-tweet-rendered {
     margin-bottom: 34px !important;
   }
+  .prev_and_next {
+    a:last-child {
+      float: right;
+    }
+  }
 }

@@ -194,4 +194,10 @@ html {
       width: 100%;
     }
   }
+  .prev_and_next {
+    padding: 10px;
+    a:last-child {
+      float: right;
+    }
+  }
 }
