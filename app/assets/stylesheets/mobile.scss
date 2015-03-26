@@ -157,8 +157,11 @@ html {
     padding: 0 10px;
     border-bottom: none;
   }
-  h2.headline.full, .show .timestamp, .byline, .original, .post_body p:not(.has-media),blockquote,li,h1,h2.h3,h4,h5,hr,small,small a {
-    padding: 0 10px;
+  // h2.headline.full, .show .timestamp, .byline, .original, .post_body p:not(.has-media),blockquote,li,h1,h2.h3,h4,h5,hr,small,small a {
+  //   padding: 0 10px;
+  // }
+  iframe {
+    max-width: 100%;
   }
   h2.headline.full {
     font-size: 18px;
@@ -167,6 +170,12 @@ html {
     margin-top: 16px !important;
     blockquote {
       padding: 12px 8px;
+    }
+  }
+  .full_post {
+    padding: 0 10px;
+    img, p.has-media {
+      margin: 0 -10px;
     }
   }
   .timestamp {
