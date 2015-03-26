@@ -42,9 +42,9 @@ class Post < ActiveRecord::Base
     where(domain: "#{site}.com").order('publish_time DESC')
   end
 
-  def self.in_month(month, domain)
+  def self.in_month(month, site)
     time = DateTime.strptime(month, "%B %Y")
-    where(publish_time: time..time.end_of_month).order('publish_time DESC')
+    by_site(site).where(publish_time: time..time.end_of_month)
   end
 
   def month_and_year
