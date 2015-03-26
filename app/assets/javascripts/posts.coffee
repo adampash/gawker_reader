@@ -21,7 +21,10 @@ ready = ->
         url: "/posts/#{$(@).data('post-id')}"
         success: (result) ->
           $("##{result.post_id}").fadeOut()
-          # window.close()
+          month_count = $("##{result.month_and_year}")
+          last_count = parseInt month_count.data('count')
+          month_count.data('count', last_count - 1)
+          month_count.text("#{month_count.data('count')} posts")
     false
 
 

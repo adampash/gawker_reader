@@ -34,8 +34,12 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    Post.find(params[:id]).destroy
-    render json: { success: true, post_id: params[:id] }
+    post = Post.find(params[:id]).destroy
+    render json: {
+      success: true,
+      post_id: params[:id],
+      month_and_year: post.month_and_year.parameterize
+    }
   end
 
   protected

@@ -35,7 +35,7 @@ class Post < ActiveRecord::Base
   end
 
   def self.group(posts)
-    posts.group_by { |post| post.publish_time.strftime("%B %Y") }
+    posts.group_by { |post| post.month_and_year }
   end
 
   def self.by_site(site)
@@ -45,6 +45,10 @@ class Post < ActiveRecord::Base
   def self.in_month(month, domain)
     time = DateTime.strptime(month, "%B %Y")
     where(publish_time: time..time.end_of_month).order('publish_time DESC')
+  end
+
+  def month_and_year
+    publish_time.strftime("%B %Y")
   end
 
   def owner_comment
