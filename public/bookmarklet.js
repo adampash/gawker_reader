@@ -10348,7 +10348,7 @@ return jQuery;
 (function() {
   var dev, link, post_url;
 
-  dev = true;
+  dev = false;
 
   post_url = dev ? "http://localhost:3000/posts" : "https://gawker-reader.herokuapp.com/posts";
 

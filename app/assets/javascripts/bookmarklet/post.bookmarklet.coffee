@@ -1,4 +1,4 @@
-dev = true
+dev = false
 post_url =
   if dev
     "http://localhost:3000/posts"
