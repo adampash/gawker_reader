@@ -2,7 +2,7 @@ class AdminController < ApplicationController
   before_action :authenticate_user!
   before_action :is_admin
   def index
-    @users = User.all.page(params[:page] || 1)
+    @users = User.all.order('created_at DESC').page(params[:page] || 1)
   end
 
   def toggle
