@@ -10350,7 +10350,7 @@ return jQuery;
 
   dev = false;
 
-  post_url = dev ? "http://localhost:3000/posts" : "https://gawker-reader.herokuapp.com/posts";
+  post_url = dev ? "http://localhost:3000/posts" : "http://reader.gawker-labs.com/posts";
 
   link = post_url + "/submit?url=" + window.location.href;
 
