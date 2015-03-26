@@ -6,4 +6,4 @@ post_url =
     "https://gawker-reader.herokuapp.com/posts"
 
 link = "#{post_url}/submit?url=#{window.location.href}"
-window.open(link, 'share', 'height=420, width=740, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no')
+window.open(link, 'share', 'height=420, width=750, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no')

@@ -29,7 +29,7 @@ class User < ActiveRecord::Base
   end
 
   def self.new_user_notification(user)
-    SlackNotifier.notify("#{user.name} just signed up http://reader.gawkerlabs.com/admin") if ENV["SLACK_TOKEN"]
+    SlackNotifier.notify("#{user.name} just signed up http://reader.gawker-labs.com/admin") if ENV["SLACK_TOKEN"]
   end
 
   def first_name
