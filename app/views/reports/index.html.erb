@@ -8,11 +8,11 @@
     <% end %>
 
     <div class="status">
+      <h4 class="filed">Reports filed for</h4>
+      <h4><%= cap_site(@site) %></h4>
       <% if @reports.empty? %>
-        <h4>No reports filed for <%= @site.upcase %> yet.</h4>
+        <h4 class="year">No reports filed for <%= cap_site @site %> yet.</h4>
       <% else %>
-        <h4 class="filed">Reports filed for</h4>
-        <h4><%= cap_site(@site) %></h4>
       </div>
       <% @grouped_reports.each do |group| %>
         <h4 class="year"><%= group[0].to_s %></h4>
