@@ -15,7 +15,7 @@
     <%= render partial: 'posts/preview', locals: { post: post } %>
     <div class="comments">
       <% post.politburo_comments.each do |comment| %>
-        <%= render comment %>
+        <%= render comment unless comment.text.empty? %>
       <% end %>
     </div>
   </div>
