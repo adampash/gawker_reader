@@ -39,7 +39,8 @@ class Post < ActiveRecord::Base
   end
 
   def self.by_site(site)
-    where(domain: "#{site}.com").order('publish_time DESC')
+    site += ".com" unless site.match (/\.com$/)
+    where(domain: site).order('publish_time DESC')
   end
 
   def self.in_month(month, site)
