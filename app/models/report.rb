@@ -17,7 +17,7 @@ class Report < ActiveRecord::Base
   end
 
   def posts
-    Post.in_month(name, domain)
+    Post.in_month(name, domain).reverse
   end
 
 end

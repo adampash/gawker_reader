@@ -1,6 +1,6 @@
 <% @grouped_posts.each do |group| %>
   <h3 class="month"><%= group[0] %> <span class="num_posts" id="<%= group[0].parameterize %>" data-count="<%= @post_count[group[0]] %>"><%= @post_count[group[0]] %> posts</span></h3>
-  <% posts = group[1..-1].flatten %>
+  <% posts = group[1..-1].flatten.reverse %>
   <% posts.each do |post| %>
     <%# <% require 'pry'; binding.pry %>
     <%= render partial: 'preview', locals: { post: post } %>
