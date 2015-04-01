@@ -62,8 +62,12 @@ class Post < ActiveRecord::Base
     publish_time.strftime("%B %Y")
   end
 
+  def owner_comments
+    comments.where(comment_type: 'owner')
+  end
+
   def owner_comment
-    owner_comment = comments.where(comment_type: 'owner')
+    owner_comment = comments.where(comment_type: 'owner').order("updated_at DESC")
     owner_comment.empty? ? nil : owner_comment.first
   end
 

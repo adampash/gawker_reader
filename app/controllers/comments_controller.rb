@@ -4,7 +4,12 @@ class CommentsController < ApplicationController
 
   def create
     post = Post.find(params[:post_id])
-    @comment = Comment.find_or_create_from_params params[:text], current_user, post
+    if current_user.owns_this_site(post.domain)
+      user = post.user
+    else
+      user = current_user
+    end
+    @comment = Comment.find_or_create_from_params params[:text], user, post, current_user
     render json: {success: true}.to_json
   end
 
