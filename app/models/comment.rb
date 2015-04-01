@@ -1,7 +1,7 @@
 class Comment < ActiveRecord::Base
   belongs_to :user
 
-  def self.find_or_create_from_params(text, user, post, current_user)
+  def self.find_or_create_from_params(text, user, post)
     comment = post_comment_for_user(post.id, user.id)
     if comment.nil?
       comment_type = "politburo" if user.politburo
@@ -13,7 +13,7 @@ class Comment < ActiveRecord::Base
         comment_type: comment_type
       )
     else
-      comment.update_attributes(text: text, user_id: current_user.id)
+      comment.update_attributes(text: text)
     end
     comment
   end
