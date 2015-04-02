@@ -29,6 +29,9 @@
   }
   .text {
     margin-top: 5px;
+    p {
+      font-family: $sans_norm;
+    }
   }
   .pin {
     float: right;
