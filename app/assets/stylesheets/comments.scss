@@ -48,9 +48,9 @@
     width: 280px;
     resize: none;
     font-family: $sans;
-    max-height: 500px;
-    overflow-y: auto;
     &.politburo_comment {
+      max-height: 500px;
+      overflow-y: auto;
       padding-left: 10px;
       padding-right: 10px;
       margin-bottom: 0px;
