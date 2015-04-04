@@ -55,7 +55,7 @@ class Post < ActiveRecord::Base
 
   def self.prev(seconds_since_epoch)
     time = DateTime.strptime(seconds_since_epoch.to_s, "%s")
-    where('publish_time > ?', time).order('publish_time ASC').first
+    where('publish_time > ?', time).order('publish_time DESC').first
   end
 
   def month_and_year
