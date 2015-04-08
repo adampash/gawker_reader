@@ -8,7 +8,7 @@
     <%= render partial: 'posts/preview', locals: { post: post, not_editable: true } %>
     <div class="comments">
       <% post.pinned_comments.each do |comment| %>
-        <%= render comment %>
+        <%= render partial: 'comments/comment', locals: { anonymize: true, comment: comment } %>
       <% end %>
     </div>
   </div>
