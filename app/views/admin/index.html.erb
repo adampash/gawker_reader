@@ -3,6 +3,7 @@
 <% @users.each do |user| %>
   <div class="user">
     <div class="name"><%= user.name %></div>
+    <div class="site"><%= user.domain %></div>
     <div class="pb">
       Politburo: <a href="#" class="toggle" data-url="/admin/toggle/<%= user.id %>" data-key="politburo" data-val="<%= user.politburo %>">
         <%= user.politburo? ? "Yes" : "No" %>
