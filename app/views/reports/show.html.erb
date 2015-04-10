@@ -1,6 +1,11 @@
 <div class="overview">
   <h3>Notes on <%= @report.name %></h3>
   <div class="overall"><%= simple_format @report.summary %></div>
+  <% if current_user.owns_this_site("#{params[:site]}.com") %>
+    <div class="share_container">
+      <div class="inline share_link"><i class="fa fa-link"></i> Private share link</div> <input type="text" class="share_url" value="<%= report_share_url(params[:site], params[:month], params[:token]) %>"</input>
+    </div>
+  <% end %>
 </div>
 <h3 class="month"><%= @report.name %> <span class="num_posts"><%= @posts.count %> posts</span></h3>
 <% @posts.each do |post| %>

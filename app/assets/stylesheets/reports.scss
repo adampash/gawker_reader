@@ -78,3 +78,17 @@ body.index.reports {
     }
   }
 }
+.inline {
+  display: inline;
+}
+.share_url {
+  display: none;
+}
+.share_link {
+  cursor: pointer;
+  font-size: 14px;
+}
+.share_container {
+  display: inline;
+  float: right;
+}

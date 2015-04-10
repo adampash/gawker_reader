@@ -1,6 +1,6 @@
 class ReportsController < ApplicationController
   before_action :authenticate_user!
-  before_action :is_politburo, except: [:index, :show]
+  before_action :is_politburo, except: [:index, :show, :share]
   before_action :is_owner, only: [:index, :show]
   before_action :owns_this_site, only: [:index, :show]
 
@@ -52,6 +52,14 @@ class ReportsController < ApplicationController
     redirect_to site_path(params[:site]) unless @report.published or current_user.politburo
     @posts = @report.posts
     @pinnable = false
+  end
+
+  def share
+    @report = Report.find_by(token: params[:token])
+    redirect_to site_path(params[:site]) unless @report.published or current_user.politburo
+    @posts = @report.posts
+    @pinnable = false
+    render :show
   end
 
 end

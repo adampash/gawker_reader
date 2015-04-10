@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get 'comments/create'
 
+  get 'reports/token/:site/:month/:token' => 'reports#share', as: :report_share
   get 'reports/politburo/:site' => 'reports#politburo', as: :build_report
   get 'reports' => 'reports#index'
   get 'reports/:site' => 'reports#index', as: :report

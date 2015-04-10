@@ -4,7 +4,8 @@ class Report < ActiveRecord::Base
     create(
       name: params[:month],
       domain: "#{params[:site]}.com",
-      user_id: user.id
+      user_id: user.id,
+      token: generate_token,
     )
   end
 
@@ -18,6 +19,13 @@ class Report < ActiveRecord::Base
 
   def posts
     Post.in_month(name, domain)
+  end
+
+  def self.generate_token
+    loop do
+      token = SecureRandom.urlsafe_base64
+      break token unless exists?(token: token)
+    end
   end
 
 end

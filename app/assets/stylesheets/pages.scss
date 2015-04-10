@@ -9,6 +9,10 @@
   }
 }
 
+input[type=text] {
+  outline: none;
+}
+
 a.login {
   text-rendering: optimizeLegibility;
   background: #808080;
