@@ -22,13 +22,16 @@ hasScrolled = ->
   # This is necessary so you never see what is "behind" the navbar.
   if (st > lastScrollTop && st > navbarHeight)
     # Scroll Down
-    console.log 'scroll down'
     $('header').removeClass('nav-down').addClass('nav-up')
   else
     # Scroll Up
-    console.log 'scroll up'
     if(st + $(window).height() < $(document).height())
         $('header').removeClass('nav-up').addClass('nav-down')
+        if $('body').hasClass('show posts')
+          if $('h2.headline').visible()
+            $('header .title').fadeOut()
+          else
+            $('header .title').text($('h2.headline.full').text()).show()
   lastScrollTop = st
 
 ready = ->

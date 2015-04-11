@@ -82,4 +82,10 @@ header:not(.pagination) {
       }
     }
   }
+  .title {
+    display: inline-block;
+    text-align: center;
+    width: 75%;
+    font-weight: bold;
+  }
 }
