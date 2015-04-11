@@ -1,5 +1,6 @@
-<nav>
-  <i class="fa fa-bars fa-lg menu"></i>
+<header>
+  <%= link_to raw('<i class="fa fa-th"></i>'), dashboard_path, class: :dashboard_icon %>
+  <a class="menu" href="#"><i class="fa fa-bars fa-lg"></i></a>
   <ul class="dropdown">
     <% if user_signed_in? %>
       <%= link_to raw("<li>Dashboard</li>"), dashboard_path %>
@@ -17,4 +18,4 @@
     <% end %>
   </ul>
   <%= site_header(@site || params[:site]) %>
-</nav>
+</header>

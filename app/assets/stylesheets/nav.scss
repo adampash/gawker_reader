@@ -1,8 +1,19 @@
-.preview nav, .submit nav {
+.preview header, .submit header {
   display: none;
 }
-nav:not(.pagination) {
+.nav-up {
+  top: -70px !important; // same as header height. use variables in LESS/SASS
+}
+header:not(.pagination) {
+  background: white;
+  z-index: 10000;
+  position: fixed;
+  top: 0;
+  transition: top 0.2s ease-in-out;
+  width: 100%;
   .site {
+    font-size: 1.5em;
+    // margin-top: 20px;
     // letter-spacing: 1px;
     // text-transform: uppercase;
     a {
@@ -11,14 +22,25 @@ nav:not(.pagination) {
       }
     }
   }
+  .dashboard_icon {
+    font-size: 1.33333333em;
+    color: black;
+    float: right;
+    margin: 20px 0 0;
+  }
   border-bottom: 1px solid #ddd;
   height: 70px;
-  padding-left: 40px;
+  // padding-left: 40px;
+  padding: 4px 25px;
   background: white;
   .menu {
     vertical-align: 0;
+    color: black;
     cursor: pointer;
     margin-right: 20px;
+    .fa-lg {
+      line-height: 0;
+    }
   }
   ul.dropdown {
     display: none;
