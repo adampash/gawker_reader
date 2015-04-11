@@ -11,6 +11,11 @@ header:not(.pagination) {
   top: 0;
   transition: top 0.2s ease-in-out;
   width: 100%;
+  border-bottom: 1px solid #ddd;
+  height: 70px;
+  // padding-left: 40px;
+  padding: 4px 40px;
+  background: white;
   .site {
     font-size: 1.5em;
     // margin-top: 20px;
@@ -28,11 +33,6 @@ header:not(.pagination) {
     float: right;
     margin: 20px 0 0;
   }
-  border-bottom: 1px solid #ddd;
-  height: 70px;
-  // padding-left: 40px;
-  padding: 4px 25px;
-  background: white;
   .menu {
     vertical-align: 0;
     color: black;
