@@ -38,11 +38,15 @@ html {
   body:not(.preview) {
     h1.site {
     }
-    nav {
+    header {
       padding-left: 20px;
+      padding-right: 20px;
       height: 50px;
       .menu {
-        margin-right: 0;
+        margin-right: 15px;
+      }
+      .dashboard_icon {
+        margin-top: 10px;
       }
       .fa, h1.site {
         font-size: 18px;
@@ -58,7 +62,7 @@ html {
       }
     }
     &.dashboard {
-      nav {
+      header {
         border-bottom: none;
       }
       width: 100%;
