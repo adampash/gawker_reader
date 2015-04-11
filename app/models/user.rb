@@ -44,4 +44,8 @@ class User < ActiveRecord::Base
     site_owner and domain == site
   end
 
+  def comments_for_month(site, month)
+    Comment.in_month(month, site, id).count
+  end
+
 end

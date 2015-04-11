@@ -21,4 +21,5 @@
   <h5 class="byline">Written by <%= post.author_name %></h5>
   <h5 class="original"><%= link_to raw("<i class=\"fa fa-external-link\"></i> Original post "), post.url, target: "_blank" %></h5>
   <%= render partial: 'comments/floating_comment' if current_user.politburo? %>
+  <%= render partial: 'posts/progress' if current_user.politburo? %>
 </div>
