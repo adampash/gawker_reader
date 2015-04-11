@@ -1,4 +1,4 @@
 <h3>Click on the report you'd like to work on</h3>
 <% @grouped_posts.each do |group| %>
-  <h3 class="month"><%= link_to group[0], build_new_report_path(@site, group[0]) %> (<%= group.flatten.count - 1 %>)</h3>
+  <h3 class="month"><%= link_to group[0], build_new_report_path(@site, group[0]) %></h3>
 <% end %>
