@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require nprogress
+//= require nprogress-turbolinks
 //= require turbolinks
 //= require comments
 //= stub ./bookmarklet/post.bookmarklet.coffee
