@@ -1,11 +1,15 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate
   before_action :site_owner, :only => [:submit]
   protect_from_forgery :except => [:create]
 
   def index
     @site = params[:site]
-    @owns = current_user.owns_this_site("#{@site}.com")
+    if user_signed_in?
+      @owns = current_user.owns_this_site("#{@site}.com")
+    else
+      @owns = false
+    end
     @posts = Post.by_site(@site).page(params[:page] || 1).per(20)
     @grouped_posts = Post.group(@posts)
     @post_count = {}
@@ -70,5 +74,9 @@ class PostsController < ApplicationController
     # require 'pry'; binding.pry
     domain = params["url"].match(/https?:\/\/(\w+\.)?(\w+\.com)/)[2]
     redirect_to root_path unless Permissions.site_owner?(current_user, domain)
+  end
+
+  def authenticate
+    params[:api_key] == ENV["API_KEY"] || authenticate_user!
   end
 end

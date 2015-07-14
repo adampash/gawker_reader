@@ -28,6 +28,10 @@ Rails.application.routes.draw do
   get 'posts/:site/next/:publish_time' => 'posts#next', as: :next_post
   get 'posts/:site/prev/:publish_time' => 'posts#prev', as: :prev_post
 
+  # API ENTRY POINT
+  get 'api/:api_key/(:site)' => 'posts#index'
+  get 'api/:api_key/:id' => 'posts#show'
+
   resources :comments
   post 'comments/pin/:id' => 'comments#pin'
   get 'logout' => 'users#logout', as: :user_logout
@@ -35,6 +39,9 @@ Rails.application.routes.draw do
   get 'setup' => 'pages#setup', as: :setup
   get ':site' => 'posts#index', as: :site
   root 'pages#welcome'
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
