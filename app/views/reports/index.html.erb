@@ -1,10 +1,16 @@
 <div class="report">
   <div class="reports_list">
     <% if current_user.politburo? %>
-      <h5 class="top">
-        Hey Politburo member!<br>
-        <%= link_to "Click here to edit and publish reports for #{cap_site @site}.", build_report_path(@site) %>
-      </h5>
+      <h5 class="top">Hey Politburo member!<h5>
+        <h4 class="filed">Unpublished reports</h4>
+        <% if @grouped_posts.length > 0 %>
+          <% @grouped_posts.each do |group| %>
+            <h4 class="month"><%= link_to group[0], build_new_report_path(@site, group[0]) %></h4>
+          <% end %>
+        <% else %>
+          <h4>None</h4>
+        <% end %>
+        <%# <%= link_to "Click here to edit and publish reports for #{cap_site @site}.", build_report_path(@site) %>
     <% end %>
 
     <div class="status">

@@ -15,9 +15,9 @@ class ReportsController < ApplicationController
     @site = params[:site]
     @reports = Report.by_site(@site).published.page(params[:page] || 1).per(20)
     @grouped_reports = @reports.group_by { |group| group.name.split(" ")[1].to_i }
-    # require 'pry'; binding.pry
-    # @month = params[:month]
-    # @grouped_posts = Post.group(Post.by_site(@site).page(params[:page] || 1).per(20))
+    if current_user.politburo?
+      @grouped_posts = Post.group(Post.by_site(@site).page(params[:page] || 1).per(20))
+    end
   end
 
   def build
