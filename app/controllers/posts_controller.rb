@@ -28,6 +28,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
+    @site = @post.domain.gsub(".com", "")
     if user_signed_in?
       @comment = Comment.post_comment_for_user(params[:id], current_user.id)
       if current_user.politburo?
@@ -35,8 +37,6 @@ class PostsController < ApplicationController
         @total_posts = Post.in_month(@post.month_and_year, @site).count
       end
     end
-    @post = Post.find(params[:id])
-    @site = @post.domain.gsub(".com", "")
   end
 
   def preview
