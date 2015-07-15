@@ -1,4 +1,4 @@
-json.months @grouped_posts do |group|
+@grouped_posts.each do |group|
   @posts = group[1..-1].flatten
   json.set! group[0] do
     json.array! @posts do |post|
