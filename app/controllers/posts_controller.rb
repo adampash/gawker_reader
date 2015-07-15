@@ -28,13 +28,15 @@ class PostsController < ApplicationController
   end
 
   def show
-    @comment = Comment.post_comment_for_user(params[:id], current_user.id)
+    if user_signed_in?
+      @comment = Comment.post_comment_for_user(params[:id], current_user.id)
+      if current_user.politburo?
+        @total_comments = current_user.comments_for_month(@site, @post.month_and_year)
+        @total_posts = Post.in_month(@post.month_and_year, @site).count
+      end
+    end
     @post = Post.find(params[:id])
     @site = @post.domain.gsub(".com", "")
-    if current_user.politburo?
-      @total_comments = current_user.comments_for_month(@site, @post.month_and_year)
-      @total_posts = Post.in_month(@post.month_and_year, @site).count
-    end
   end
 
   def preview

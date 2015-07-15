@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
   # API ENTRY POINT
   get 'api/:api_key/(:site)' => 'posts#index'
-  get 'api/:api_key/:id' => 'posts#show'
+  get 'api/:api_key/posts/:id' => 'posts#show'
 
   resources :comments
   post 'comments/pin/:id' => 'comments#pin'
