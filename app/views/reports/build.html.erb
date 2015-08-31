@@ -4,12 +4,16 @@
   </a>
 </h5>
 <div class="overview">
-  <h3>Notes on <%= @report.name %></h3>
+  <h3>Politburo Notes on <%= @report.name %></h3>
   <textarea class="overall" placeholder="Write overall comments for the month here..."><%= @report.summary %></textarea>
   <button class="save" data-report-id="<%= @report.id %>">Save</button>
   <h5 class="message"></h5>
 </div>
 <h3 class="month"><%= @report.name %> <span class="num_posts"><%= @posts.count %> posts</span></h3>
+<div class="overview notes">
+  <h3>Editor notes</h3>
+  <div class="overall load_notes" data-site="<%= @report.site %>" data-month="<%= @report.name %>" ></div>
+</div>
 <% @posts.each do |post| %>
   <div class="post">
     <%= render partial: 'posts/preview', locals: { post: post } %>

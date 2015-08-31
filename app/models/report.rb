@@ -21,6 +21,10 @@ class Report < ActiveRecord::Base
     Post.in_month(name, domain)
   end
 
+  def site
+    domain.split('.com')[0]
+  end
+
   def self.generate_token
     loop do
       token = SecureRandom.urlsafe_base64

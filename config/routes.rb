@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   get 'reports/politburo'
 
   get 'reports/index'
+  get 'notes' => "notes#show"
+  post 'notes' => "notes#create"
 
   get 'admin/index'
 

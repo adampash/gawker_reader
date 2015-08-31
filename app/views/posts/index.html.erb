@@ -1,5 +1,17 @@
 <% @grouped_posts.each do |group| %>
   <h3 class="month"><%= group[0] %> <span class="num_posts" id="<%= group[0].parameterize %>" data-count="<%= @post_count[group[0]] %>"><%= @post_count[group[0]] %> posts</span></h3>
+  <% if current_user.owns_this_site("#{@site}.com") or current_user.politburo? %>
+    <div class="overview notes">
+      <h3>Editor notes</h3>
+      <% if current_user.owns_this_site("#{@site}.com") %>
+      <textarea class="overall load_notes" data-editable="1" data-site="<%= @site %>" data-month="<%= group[0] %>" placeholder="Write overall notes for the month here..."></textarea>
+      <button class="save_note">Save</button>
+      <h5 class="message"></h5>
+      <% elsif current_user.politburo? %>
+        <div class="overall load_notes" data-site="<%= @site %>" data-month="<%= group[0] %>" ></div>
+      <% end %>
+    </div>
+  <% end %>
   <% posts = group[1..-1].flatten %>
   <% posts.each do |post| %>
     <%# <% require 'pry'; binding.pry %>

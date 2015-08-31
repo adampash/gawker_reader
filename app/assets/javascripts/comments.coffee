@@ -12,7 +12,7 @@ ready = ->
     if post_id?
       url = "/comments"
     else
-      report_id = $(@).data('report-id') 
+      report_id = $(@).data('report-id')
       url = "/reports/comment"
     params =
       text: comment
@@ -36,7 +36,7 @@ ready = ->
     $('.floating_comments button').show()
 
   $('.preview textarea, .overview textarea, .top_comment textarea').on 'focus', ->
-    $(@).parents('.preview, .overview, .top_comment').find('button.save').show()
+    $(@).parents('.preview, .overview, .top_comment').find('button.save, button.save_note').show()
 
   $('.notes button.cancel').on 'click', ->
     $.ajax

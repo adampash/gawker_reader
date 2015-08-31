@@ -48,4 +48,8 @@ class User < ActiveRecord::Base
     Comment.in_month(month, site, id).count
   end
 
+  def editor?
+    site_owner
+  end
+
 end

@@ -186,7 +186,7 @@ body {
     // margin-top: 0;
   }
   .preview, .overview, .top_comment {
-    button.save {
+    button.save, button.save_note {
       display: none;
       width: 80px;
       float: right;
