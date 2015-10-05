@@ -27,6 +27,10 @@ ready = ->
           month_count.text("#{month_count.data('count')} posts")
     false
 
+  $('.lazy-image img').map((index, img) =>
+    $(img).attr('src', $(img).data('asset-url'))
+  )
+
 
 
 $(document).ready(ready)
