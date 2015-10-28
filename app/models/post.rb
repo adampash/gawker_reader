@@ -100,6 +100,10 @@ class Post < ActiveRecord::Base
     domain.gsub!('.com', '')
   end
 
+  def word_count
+    text.split(' ').length
+  end
+
   private
   def self.milli_to_date(milliseconds)
     DateTime.strptime(milliseconds.to_s, '%Q')

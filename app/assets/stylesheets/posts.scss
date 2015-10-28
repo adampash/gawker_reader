@@ -92,7 +92,7 @@ body {
     margin: 33px 0;
     // margin: 20px;
   }
-  .media-640 {
+  .media-640, .media-large {
     text-align: center;
     img {
       max-width: 100%;
@@ -275,5 +275,11 @@ body {
     a:last-child {
       float: right;
     }
+  }
+}
+
+.has-media {
+  .media-large {
+    // margin-left: -50px;
   }
 }

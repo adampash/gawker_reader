@@ -35,3 +35,11 @@ ready = ->
 
 $(document).ready(ready)
 $(document).on('page:load', ready)
+
+receiveMessage = (message) ->
+  message = JSON.parse(message.data)
+  if message.kinja?
+    $('iframe[src="' + message.kinja.sourceUrl + '"]')
+      .height(message.kinja.resizeFrame.height)
+
+window.addEventListener("message", receiveMessage, false)

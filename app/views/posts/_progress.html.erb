@@ -8,5 +8,8 @@
   <h5>
     submitted for <%= @post.month_and_year %>.
   </h5>
+  <br>
+  <h5><span class="red">Author:</span> <%= @post.author %></h5>
+  <h5><span class="red">Word count:</span> <%= number_with_delimiter @post.word_count %> words</h5>
 </div>
 

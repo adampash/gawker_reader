@@ -50,6 +50,7 @@ gem 'rails_12factor', group: :production
 gem 'slack-notifier'
 
 group :development, :test do
+  gem 'certified'
   gem 'rspec-rails'
   gem 'guard-rspec'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
