@@ -32,9 +32,8 @@ ready = ->
   )
   $('iframe').map((index, iframe) =>
     if iframe.src.search(/ajax\/inset\/iframe/) > -1
-      console.log iframe.src
-      iframe.src = iframe.src.replace(/http:\/\/[a-z|\.|\:|\d]+\//, 'http://kinja.com/')
-      console.log iframe.src
+      url_re = /http:\/\/[a-z|\.|\:|\d|\-]+\//
+      iframe.src = iframe.src.replace(url_re, 'http://kinja.com/')
   )
 
 
