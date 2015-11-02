@@ -110,6 +110,7 @@ body {
   }
   iframe {
     border: none;
+    max-width: 100%;
   }
   hr {
     border: none;
@@ -279,6 +280,7 @@ body {
 }
 
 .has-media {
+  text-align: center;
   .media-large {
     // margin-left: -50px;
   }
