@@ -30,6 +30,12 @@ ready = ->
   $('.lazy-image img').map((index, img) =>
     $(img).attr('src', $(img).data('asset-url'))
   )
+  $('iframe').map((index, iframe) =>
+    if iframe.src.search(/ajax\/inset\/iframe/) > -1
+      console.log iframe.src
+      iframe.src = iframe.src.replace(/http:\/\/[a-z|\.|\:|\d]+\//, 'http://kinja.com/')
+      console.log iframe.src
+  )
 
 
 
