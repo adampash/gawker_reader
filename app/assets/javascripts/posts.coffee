@@ -42,9 +42,8 @@ ready = ->
       method: "GET"
       url: "http://kotaku.com/api/analytics/kala/viewsForPost?id=#{id}"
       success: (result) ->
-        console.log result
-        $('.view_count').text(result.data[0].views)
-        $('.uniq_count').text(result.data[0].uniqueViews)
+        $(post).find('.view_count').text(result.data[0].views)
+        $(post).find('.uniq_count').text(result.data[0].uniqueViews)
   )
 
 
