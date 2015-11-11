@@ -10,8 +10,9 @@
   <% end %>
   <div class="text">
     <h2 class="headline"><%= link_to raw(post.headline), post_path(post) %></h2>
-    <%# <%= timestamp(post.publish_time, short: true) unless current_user.owns_this_site(post.domain) %>
     <%= timestamp(post.publish_time, short: true) %>
+    <span class="timestamp">| <%= post.author %> | </span>
+    <span class="timestamp post_views" data-id="<%= post.kinja_id %>">Views:<span class="view_count"></span></span>
     <% if current_user.owns_this_site(post.domain) and post.owner_comment and !defined? not_editable %>
       <div class="user editor">
         <div class="name"><%= post.owner_comment.user.name %></div>

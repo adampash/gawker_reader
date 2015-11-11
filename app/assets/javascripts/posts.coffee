@@ -36,6 +36,17 @@ ready = ->
       iframe.src = iframe.src.replace(url_re, 'http://kinja.com/')
   )
 
+  $('.post_views').map((index, post) =>
+    id = $(post).data('id')
+    $.ajax
+      method: "GET"
+      url: "http://kotaku.com/api/analytics/kala/viewsForPost?id=#{id}"
+      success: (result) ->
+        console.log result
+        $('.view_count').text(result.data[0].views)
+        $('.uniq_count').text(result.data[0].uniqueViews)
+  )
+
 
 
 $(document).ready(ready)

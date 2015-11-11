@@ -11,5 +11,7 @@
   <br>
   <h5><span class="red">Author:</span> <%= @post.author %></h5>
   <h5><span class="red">Word count:</span> <%= number_with_delimiter @post.word_count %> words</h5>
+  <h5><span class="red post_views" data-id="<%= @post.kinja_id %>">Views:</span> <span class="view_count"></span></h5>
+  <h5><span class="red post_views" data-id="<%= @post.kinja_id %>">Uniques:</span> <span class="uniq_count"></span></h5>
 </div>
 
