@@ -9,7 +9,7 @@
     submitted for <%= @post.month_and_year %>.
   </h5>
   <br>
-  <h5><span class="red">Author:</span> <%= @post.author %></h5>
+  <h5><span class="red">Author:</span> <%= @post.author_name %></h5>
   <h5><span class="red">Word count:</span> <%= number_with_delimiter @post.word_count %> words</h5>
   <h5><span class="post_views" data-id="<%= @post.kinja_id %>"><span class="red">Views:</span> <span class="view_count"></span></span></h5>
   <h5><span class="post_views" data-id="<%= @post.kinja_id %>"><span class="red">Uniques:</span> <span class="uniq_count"></span></span></h5>
