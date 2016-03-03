@@ -115,7 +115,7 @@ body {
   hr {
     border: none;
     border-top: 1px solid #ddd;
-    &.stars {
+    &.stars, &.storybreak-stars {
       border: 0;
       text-align: center;
       &:after {
